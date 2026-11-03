@@ -92,3 +92,4 @@ Presentacion-Tecnologias/
    ```
 2. Abrir el archivo `index.html` en cualquier navegador web moderno (Google Chrome, Edge, Firefox, Safari).  
    *No requiere servidores backend ni instalación de paquetes adicionales.*
+
