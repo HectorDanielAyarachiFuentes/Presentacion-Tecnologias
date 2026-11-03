@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgPiramide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b"/>
+      <stop offset="50%" stop-color="#1c2541"/>
+      <stop offset="100%" stop-color="#0b132b"/>
+    </linearGradient>
+
+    <!-- Niveles de la Pirámide -->
+    <!-- Nivel 1: DSS Dorado / Ámbar -->
+    <linearGradient id="dssTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="dssLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="dssRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+
+    <!-- Nivel 2: MIS Azul / Cobalto -->
+    <linearGradient id="misTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="misLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="misRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+
+    <!-- Nivel 3: TPS Verde / Esmeralda -->
+    <linearGradient id="tpsTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="tpsLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="tpsRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+
+    <filter id="shadowPyr" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="glowGold" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#f59e0b" flood-opacity="0.8"/>
+    </filter>
+    <filter id="glowBlue" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#38bdf8" flood-opacity="0.8"/>
+    </filter>
+
+    <style>
+      /* Animaciones Isométricas de la Pirámide TPS, MIS, DSS */
+      @keyframes streamAscendDashes {
+        from { stroke-dashoffset: 40; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes goldHaloPulse {
+        0%, 100% { transform: scale(1); opacity: 0.8; filter: drop-shadow(0 0 4px #f59e0b); }
+        50% { transform: scale(1.06); opacity: 1; filter: drop-shadow(0 0 12px #f59e0b); }
+      }
+      @keyframes tierFloatBreathing {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes ledGreenBlink {
+        0%, 100% { fill: #34d399; }
+        50% { fill: #059669; }
+      }
+
+      .anim-stream-ascend { animation: streamAscendDashes 1.6s linear infinite; }
+      .anim-gold-halo { transform-box: fill-box; transform-origin: center; animation: goldHaloPulse 2.8s ease-in-out infinite; }
+      .anim-tier-float { animation: tierFloatBreathing 3.6s ease-in-out infinite; }
+      .anim-led-green { animation: ledGreenBlink 1s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Fondo Tecnológico -->
+  <rect width="600" height="600" rx="12" fill="url(#bgPiramide)"/>
+
+  <!-- Líneas de Rayos y Coordenadas Isométricas de fondo animadas -->
+  <g stroke="rgba(212,175,55,0.14)" stroke-width="1" fill="none">
+    <path d="M50 350 L300 200 L550 350 L300 500 Z" stroke-dasharray="6,4" class="anim-stream-ascend"/>
+    <path d="M300 40 L300 560"/>
+    <path d="M120 180 L480 420"/>
+    <path d="M480 180 L120 420"/>
+  </g>
+
+  <!-- Cabecera Superior -->
+  <g transform="translate(30, 22)">
+    <rect width="540" height="42" rx="7" fill="rgba(15, 23, 42, 0.92)" stroke="rgba(245,158,11,0.5)" stroke-width="1.5"/>
+    <circle cx="22" cy="21" r="6.5" fill="#f59e0b" filter="url(#glowGold)" class="anim-gold-halo"/>
+    <text x="38" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" letter-spacing="0.3">
+      PIRÁMIDE TIG: TPS, MIS Y DSS
+    </text>
+    <g transform="translate(425, 9)">
+      <rect width="95" height="24" rx="5" fill="#d97706"/>
+      <text x="47.5" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" fill="#ffffff" letter-spacing="0.5" text-anchor="middle">
+        3 NIVELES
+      </text>
+    </g>
+  </g>
+
+  <!-- ═════════════════════════════════════════════════════════════════════════
+       PIRÁMIDE ISOMÉTRICA ESCALONADA EN 3D (3 NIVELES)
+       ═════════════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(0, 10)" filter="url(#shadowPyr)">
+
+    <!-- ───────────────────────────────────────────────────────────────────────
+         NIVEL 3: BASE DE LA PIRÁMIDE (TPS - TRANSACTION PROCESSING SYSTEM)
+         ─────────────────────────────────────────────────────────────────────── -->
+    <g id="tier-tps">
+      <!-- Cara Superior Nivel TPS -->
+      <path d="M100 370 L300 270 L500 370 L300 470 Z" fill="url(#tpsTop)" stroke="#6ee7b7" stroke-width="1.2"/>
+      <!-- Cara Izquierda -->
+      <path d="M100 370 L300 470 L300 515 L100 415 Z" fill="url(#tpsLeft)"/>
+      <!-- Cara Derecha -->
+      <path d="M300 470 L500 370 L500 415 L300 515 Z" fill="url(#tpsRight)"/>
+
+      <!-- Detalles del Nivel Operativo TPS: Sensores y Terminales -->
+      <g transform="translate(140, 395)">
+        <rect x="0" y="0" width="110" height="24" rx="3" fill="rgba(6, 78, 59, 0.95)" stroke="#34d399" stroke-width="1"/>
+        <text x="10" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#ecfdf5">
+          BASE OPERATIVA: TPS
+        </text>
+      </g>
+      <circle cx="280" cy="485" r="3" class="anim-led-green"/>
+      <circle cx="320" cy="485" r="3" class="anim-led-green"/>
+      <text x="300" y="500" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#a7f3d0" text-anchor="middle">
+        Doña Inés • Taller de Costura • Código de Barras • Biometría
+      </text>
+    </g>
+
+    <!-- ───────────────────────────────────────────────────────────────────────
+         NIVEL 2: CENTRO DE LA PIRÁMIDE (MIS - MANAGEMENT INFORMATION SYSTEM)
+         ─────────────────────────────────────────────────────────────────────── -->
+    <g id="tier-mis" transform="translate(0, -50)">
+      <!-- Cara Superior Nivel MIS -->
+      <path d="M150 290 L300 215 L450 290 L300 365 Z" fill="url(#misTop)" stroke="#93c5fd" stroke-width="1.2"/>
+      <!-- Cara Izquierda -->
+      <path d="M150 290 L300 365 L300 410 L150 335 Z" fill="url(#misLeft)"/>
+      <!-- Cara Derecha -->
+      <path d="M300 365 L450 290 L450 335 L300 410 Z" fill="url(#misRight)"/>
+
+      <!-- Detalles del Nivel Táctico MIS -->
+      <g transform="translate(170, 315)">
+        <rect x="0" y="0" width="115" height="24" rx="3" fill="rgba(30, 58, 138, 0.95)" stroke="#60a5fa" stroke-width="1"/>
+        <text x="10" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#eff6ff">
+          NIVEL TÁCTICO: MIS
+        </text>
+      </g>
+      <text x="300" y="390" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#bfdbfe" text-anchor="middle">
+        Beatriz Pinzón • Hugo Lombardi • Reporte Mermas • Control Nómina
+      </text>
+    </g>
+
+    <!-- ───────────────────────────────────────────────────────────────────────
+         NIVEL 1: CÚSPIDE DE LA PIRÁMIDE (DSS / ESS - ESTRATÉGICO & ANTI-FRAUDE)
+         ─────────────────────────────────────────────────────────────────────── -->
+    <g id="tier-dss" transform="translate(0, -95)">
+      <!-- Cara Superior Cúspide DSS -->
+      <path d="M210 210 L300 160 L390 210 L300 260 Z" fill="url(#dssTop)" stroke="#fde68a" stroke-width="1.5"/>
+      <!-- Cara Izquierda -->
+      <path d="M210 210 L300 260 L300 300 L210 250 Z" fill="url(#dssLeft)"/>
+      <!-- Cara Derecha -->
+      <path d="M300 260 L390 210 L390 250 L300 300 Z" fill="url(#dssRight)"/>
+
+      <!-- Corona / Candado de Bloqueo Anti-Fraude en la Cúspide -->
+      <g transform="translate(255, 120)" class="anim-gold-halo">
+        <rect x="0" y="0" width="90" height="34" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="1.8"/>
+        <text x="10" y="15" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#fef08a">
+          👑 DSS DIRECTIVO
+        </text>
+        <text x="10" y="27" font-family="'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">
+          🛡️ Anti-Terramoda
+        </text>
+      </g>
+
+      <text x="300" y="285" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#fde68a" text-anchor="middle">
+        Armando Mendoza • Junta Directiva • Executive Dashboard • What-If
+      </text>
+    </g>
+  </g>
+
+  <!-- ═════════════════════════════════════════════════════════════════════════
+       COLUMNA LATERAL: PIPELINE GIGO Y FLUJO ASCENDENTE DE INFORMACIÓN
+       ═════════════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(475, 140)">
+    <!-- Barra vertical de flujo ascendente animada con stroke-dashoffset -->
+    <line x1="15" y1="310" x2="15" y2="20" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,4" class="anim-stream-ascend"/>
+    <polygon points="15,10 8,24 22,24" fill="#f59e0b" class="anim-gold-halo"/>
+
+    <!-- Etiquetas del Flujo Ascendente -->
+    <g transform="translate(25, 40)">
+      <rect x="0" y="0" width="70" height="42" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#f59e0b" stroke-width="1"/>
+      <text x="8" y="16" font-family="sans-serif" font-size="7" font-weight="900" fill="#fef08a">DECISIÓN</text>
+      <text x="8" y="28" font-family="sans-serif" font-size="6.5" fill="#e2e8f0">Estratégica</text>
+      <text x="8" y="38" font-family="sans-serif" font-size="6" fill="#94a3b8">Simuladores</text>
+    </g>
+
+    <g transform="translate(25, 145)">
+      <rect x="0" y="0" width="70" height="42" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" stroke-width="1"/>
+      <text x="8" y="16" font-family="sans-serif" font-size="7" font-weight="900" fill="#7dd3fc">CONTROL</text>
+      <text x="8" y="28" font-family="sans-serif" font-size="6.5" fill="#e2e8f0">Gerencial</text>
+      <text x="8" y="38" font-family="sans-serif" font-size="6" fill="#94a3b8">Reportes MIS</text>
+    </g>
+
+    <g transform="translate(25, 250)">
+      <rect x="0" y="0" width="70" height="42" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#34d399" stroke-width="1"/>
+      <text x="8" y="16" font-family="sans-serif" font-size="7" font-weight="900" fill="#a7f3d0">CAPTURA</text>
+      <text x="8" y="28" font-family="sans-serif" font-size="6.5" fill="#e2e8f0">Transaccional</text>
+      <text x="8" y="38" font-family="sans-serif" font-size="6" fill="#94a3b8">Datos TPS</text>
+    </g>
+  </g>
+
+  <!-- Tarjeta Pie de Resumen -->
+  <g transform="translate(30, 520)">
+    <rect width="540" height="56" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+    <text x="18" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="800" fill="#f59e0b">
+      ALINEACIÓN PIRAMIDAL: PRINCIPIO GIGO (GARBAGE IN, GARBAGE OUT)
+    </text>
+    <text x="18" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#e2e8f0">
+      • Datos limpios en TPS ➔ Reportes confiables en MIS ➔ Junta directiva en DSS con balances reales anti-fraude.
+    </text>
+  </g>
+</svg>

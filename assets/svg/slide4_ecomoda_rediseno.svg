@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgRedesign" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="50%" stop-color="#0f2d59"/>
+      <stop offset="100%" stop-color="#091428"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </linearGradient>
+    <linearGradient id="greenNode" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadowRedesign" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#38bdf8" flood-opacity="0.8"/>
+    </filter>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#10b981" flood-opacity="0.8"/>
+    </filter>
+
+    <style>
+      /* Animaciones Isométricas de Rediseño ERP */
+      @keyframes floatServerNode {
+        0% { transform: translate(180px, 80px); }
+        50% { transform: translate(180px, 72px); }
+        100% { transform: translate(180px, 80px); }
+      }
+      @keyframes flowDataStream {
+        from { stroke-dashoffset: 48; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes scanBarcodeLaser {
+        0% { transform: translateY(0px); opacity: 0.2; }
+        50% { transform: translateY(22px); opacity: 0.95; }
+        100% { transform: translateY(0px); opacity: 0.2; }
+      }
+      @keyframes pulseDashboardGlow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.95; filter: drop-shadow(0 0 6px #38bdf8); }
+      }
+      @keyframes blinkAuditLed {
+        0%, 100% { fill: #10b981; filter: url(#glowGreen); }
+        50% { fill: #065f46; filter: none; }
+      }
+      @keyframes floatTabletNode {
+        0% { transform: translate(375px, 275px); }
+        50% { transform: translate(375px, 268px); }
+        100% { transform: translate(375px, 275px); }
+      }
+      @keyframes floatTallerNode {
+        0% { transform: translate(45px, 275px); }
+        50% { transform: translate(45px, 268px); }
+        100% { transform: translate(45px, 275px); }
+      }
+
+      .anim-server { animation: floatServerNode 4s ease-in-out infinite; }
+      .anim-taller { animation: floatTallerNode 4.2s ease-in-out infinite; }
+      .anim-tablet { animation: floatTabletNode 3.8s ease-in-out infinite; }
+      .anim-stream { animation: flowDataStream 1.8s linear infinite; }
+      .anim-laser { animation: scanBarcodeLaser 2s ease-in-out infinite; }
+      .anim-kpi { animation: pulseDashboardGlow 2.5s ease-in-out infinite; }
+      .anim-audit-led { animation: blinkAuditLed 1.2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Fondo Tecnológico Moderno -->
+  <rect width="600" height="600" rx="12" fill="url(#bgRedesign)"/>
+  
+  <!-- Red de líneas de datos isométricas conectadas -->
+  <g stroke="rgba(56,189,248,0.22)" stroke-width="1.2" fill="none">
+    <path d="M100 300 L300 180 L500 300 L300 420 Z" stroke-dasharray="6,4" class="anim-stream"/>
+    <path d="M300 100 L300 480"/>
+    <path d="M120 280 L480 280"/>
+    <circle cx="300" cy="180" r="5" fill="#38bdf8" class="anim-kpi"/>
+    <circle cx="100" cy="300" r="5" class="anim-audit-led"/>
+    <circle cx="500" cy="300" r="5" fill="#f59e0b"/>
+  </g>
+
+  <!-- Cabecera Superior -->
+  <g transform="translate(30, 22)">
+    <rect width="540" height="42" rx="7" fill="rgba(15, 23, 42, 0.92)" stroke="rgba(56,189,248,0.45)" stroke-width="1.5"/>
+    <circle cx="22" cy="21" r="6.5" class="anim-audit-led"/>
+    <text x="38" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" letter-spacing="0.3">
+      REDISEÑO: ERP CLOUD Y CERO PAPEL
+    </text>
+    <g transform="translate(425, 9)">
+      <rect width="95" height="24" rx="5" fill="#059669"/>
+      <text x="47.5" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" fill="#ffffff" letter-spacing="0.5" text-anchor="middle">
+        TIG MODERNO
+      </text>
+    </g>
+  </g>
+
+  <!-- NODO SUPERIOR: NUBE ERP Y BASE DE DATOS CENTRALIZADA (SSOT) ANIMADA -->
+  <g class="anim-server" filter="url(#shadowRedesign)">
+    <!-- Servidores en la Nube / Base de Datos Cilíndrica Isométrica -->
+    <path d="M40 70 C40 45, 200 45, 200 70 C200 95, 40 95, 40 70 Z" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+    <path d="M40 70 L40 105 C40 130, 200 130, 200 105 L200 70 Z" fill="#0369a1" stroke="#38bdf8" stroke-width="1.5"/>
+    <path d="M40 105 L40 140 C40 165, 200 165, 200 140 L200 105 Z" fill="#075985" stroke="#38bdf8" stroke-width="1.5"/>
+    
+    <!-- LEDs de Servidor y Líneas de Auditoría Animadas -->
+    <line x1="65" y1="85" x2="175" y2="85" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3" class="anim-stream"/>
+    <line x1="65" y1="120" x2="175" y2="120" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3" class="anim-stream"/>
+    <circle cx="55" cy="85" r="3.5" class="anim-audit-led"/>
+    <circle cx="55" cy="120" r="3.5" class="anim-audit-led"/>
+    <circle cx="185" cy="85" r="3.5" fill="#38bdf8" class="anim-kpi"/>
+    <circle cx="185" cy="120" r="3.5" fill="#38bdf8" class="anim-kpi"/>
+
+    <!-- Etiqueta ERP en Nube -->
+    <rect x="35" y="45" width="170" height="26" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="50" y="62" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="900" fill="#38bdf8">
+      ☁️ ERP CLOUD TEXTIL
+    </text>
+    <text x="45" y="152" font-family="'Segoe UI', monospace" font-size="8" font-weight="bold" fill="#fef08a">
+      Single Source of Truth (SSOT)
+    </text>
+  </g>
+
+  <!-- LÍNEAS DE FLUJO DESCENDENTES HACIA LAS 3 MIRADAS (CONECTORES ACTIVOS ANIMADOS) -->
+  <g stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" fill="none" class="anim-stream">
+    <path d="M220 220 L150 280"/>
+    <path d="M300 220 L300 280"/>
+    <path d="M380 220 L450 280"/>
+  </g>
+
+  <!-- NODO IZQUIERDO: TALLER DE CORTE & CONFECCIÓN (DOÑA INESITA) -->
+  <g class="anim-taller" filter="url(#shadowRedesign)">
+    <!-- Base Isométrica -->
+    <path d="M10 60 L100 10 L190 60 L100 110 Z" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+    <path d="M10 60 L100 110 L100 125 L10 75 Z" fill="#0f172a"/>
+    <path d="M100 110 L190 60 L190 75 L100 125 Z" fill="#0f172a"/>
+    
+    <!-- Pantalla Táctil con Código de Barras -->
+    <rect x="60" y="30" width="80" height="52" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <text x="68" y="44" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#34d399">TALLER CONFECCIÓN</text>
+    
+    <!-- Código de barras y láser de lectura animado -->
+    <g transform="translate(70, 50)">
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#ffffff" stroke-width="2"/>
+      <line x1="6" y1="0" x2="6" y2="20" stroke="#ffffff" stroke-width="1"/>
+      <line x1="12" y1="0" x2="12" y2="20" stroke="#ffffff" stroke-width="3"/>
+      <line x1="18" y1="0" x2="18" y2="20" stroke="#ffffff" stroke-width="1"/>
+      <line x1="24" y1="0" x2="24" y2="20" stroke="#ffffff" stroke-width="2"/>
+      <line x1="32" y1="0" x2="32" y2="20" stroke="#ffffff" stroke-width="4"/>
+      <line x1="42" y1="0" x2="42" y2="20" stroke="#ffffff" stroke-width="1"/>
+      <line x1="50" y1="0" x2="50" y2="20" stroke="#ffffff" stroke-width="3"/>
+      
+      <!-- Láser de lectura verde animado -->
+      <g class="anim-laser">
+        <line x1="-5" y1="0" x2="55" y2="0" stroke="#10b981" stroke-width="2" filter="url(#glowGreen)"/>
+      </g>
+    </g>
+
+    <!-- Etiqueta Doña Inés -->
+    <rect x="35" y="98" width="130" height="20" rx="3" fill="rgba(6, 78, 59, 0.95)" stroke="#10b981" stroke-width="1"/>
+    <text x="44" y="112" font-family="sans-serif" font-size="7" font-weight="bold" fill="#ecfdf5">
+      ✂️ Terminal Táctil (Doña Inés)
+    </text>
+  </g>
+
+  <!-- NODO CENTRAL: DASHBOARD DE PRESIDENCIA (4 CUADRANTES EN TIEMPO REAL) -->
+  <g transform="translate(210, 270)" filter="url(#shadowRedesign)">
+    <rect x="0" y="0" width="180" height="120" rx="8" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="0" y="0" width="180" height="24" rx="8" fill="#0369a1"/>
+    <text x="12" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="bold" fill="#ffffff">
+      📊 DASHBOARD PRESIDENCIA (4 CUADRANTES)
+    </text>
+
+    <!-- Cuadrante 1: Financiero -->
+    <rect x="8" y="30" width="78" height="38" rx="3" fill="#1e293b"/>
+    <text x="14" y="42" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#38bdf8">FINANZAS</text>
+    <text x="14" y="54" font-family="sans-serif" font-size="9" font-weight="bold" fill="#10b981" class="anim-kpi">EBITDA +22%</text>
+    <text x="14" y="63" font-family="monospace" font-size="5.5" fill="#94a3b8">SSOT Auditado</text>
+
+    <!-- Cuadrante 2: Producción Lombardi -->
+    <rect x="94" y="30" width="78" height="38" rx="3" fill="#1e293b"/>
+    <text x="100" y="42" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#f59e0b">PRODUCCIÓN</text>
+    <text x="100" y="54" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fef08a">Mermas: 4.2%</text>
+    <text x="100" y="63" font-family="monospace" font-size="5.5" fill="#10b981">Control OP 408</text>
+
+    <!-- Cuadrante 3: Comercial -->
+    <rect x="8" y="74" width="78" height="38" rx="3" fill="#1e293b"/>
+    <text x="14" y="86" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#a855f7">COMERCIAL</text>
+    <text x="14" y="98" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#f3e8ff">Boutiques POS</text>
+    <text x="14" y="106" font-family="monospace" font-size="5.5" fill="#94a3b8">Stock Central</text>
+
+    <!-- Cuadrante 4: Talento Humano / Biometría -->
+    <rect x="94" y="74" width="78" height="38" rx="3" fill="#1e293b"/>
+    <text x="100" y="86" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#34d399">RRHH BIOMETRÍA</text>
+    <text x="100" y="98" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#ecfdf5">Fichadas 100%</text>
+    <text x="100" y="106" font-family="monospace" font-size="5.5" fill="#34d399">Cero favoritismo</text>
+  </g>
+
+  <!-- NODO DERECHO: RRHH, FREDDY DIGITAL & MERITOCRACIA -->
+  <g class="anim-tablet" filter="url(#shadowRedesign)">
+    <!-- Base Isométrica -->
+    <path d="M10 60 L100 10 L190 60 L100 110 Z" fill="#1e293b" stroke="#eab308" stroke-width="1.5"/>
+    <path d="M10 60 L100 110 L100 125 L10 75 Z" fill="#0f172a"/>
+    <path d="M100 110 L190 60 L190 75 L100 125 Z" fill="#0f172a"/>
+
+    <!-- Tablet de Freddy Contreras con Firma Digital -->
+    <rect x="50" y="25" width="100" height="60" rx="5" fill="#0f172a" stroke="#eab308" stroke-width="1.5"/>
+    <text x="58" y="38" font-family="sans-serif" font-size="7" font-weight="bold" fill="#fde68a">RRHH &amp; LOGÍSTICA</text>
+    <rect x="58" y="44" width="84" height="24" rx="2" fill="#1e293b"/>
+    <text x="64" y="55" font-family="monospace" font-size="6" fill="#38bdf8">Ticket #4092</text>
+    <text x="64" y="63" font-family="monospace" font-size="6" fill="#10b981">✓ Firma Digital</text>
+    <circle cx="134" cy="56" r="4" class="anim-audit-led"/>
+
+    <!-- Etiqueta Freddy & Mérito -->
+    <rect x="35" y="98" width="130" height="20" rx="3" fill="rgba(113, 63, 18, 0.95)" stroke="#eab308" stroke-width="1"/>
+    <text x="42" y="112" font-family="sans-serif" font-size="7" font-weight="bold" fill="#fef08a">
+      📱 Tablet Móvil (Freddy)
+    </text>
+  </g>
+
+  <!-- 3 PEDIDOS AL SISTEMA (REGLAS Y BARRERA ANTI-FRAUDE) -->
+  <g transform="translate(30, 420)">
+    <!-- Caja Pedido 1: Límite Presupuestario -->
+    <g transform="translate(0, 0)">
+      <rect width="170" height="75" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="10" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#fca5a5">
+        1. BLOQUEO COMPRAS
+      </text>
+      <text x="10" y="36" font-family="sans-serif" font-size="7" fill="#cbd5e1">
+        Tope presupuestario automático
+      </text>
+      <text x="10" y="48" font-family="sans-serif" font-size="7" fill="#cbd5e1">
+        para telas de Hugo Lombardi.
+      </text>
+      <text x="10" y="64" font-family="sans-serif" font-size="7" font-weight="bold" fill="#f87171">
+        🔒 Bloqueo en ERP Cloud
+      </text>
+    </g>
+
+    <!-- Caja Pedido 2: Nómina Biométrica -->
+    <g transform="translate(185, 0)">
+      <rect width="170" height="75" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#10b981" stroke-width="1.2"/>
+      <text x="10" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#6ee7b7">
+        2. NÓMINA OBJETIVA
+      </text>
+      <text x="10" y="36" font-family="sans-serif" font-size="7" fill="#cbd5e1">
+        Descuentos por huella biométrica
+      </text>
+      <text x="10" y="48" font-family="sans-serif" font-size="7" fill="#cbd5e1">
+        (Patricia) y horas extras reales.
+      </text>
+      <text x="10" y="64" font-family="sans-serif" font-size="7" font-weight="bold" fill="#34d399">
+        ✓ Liquidación sin sesgos
+      </text>
+    </g>
+
+    <!-- Caja Pedido 3: Balance Auditado Inmutable -->
+    <g transform="translate(370, 0)">
+      <rect width="170" height="75" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="10" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#7dd3fc">
+        3. TRAZABILIDAD TOTAL
+      </text>
+      <text x="10" y="36" font-family="sans-serif" font-size="7" fill="#cbd5e1">
+        Estados contables en tiempo real.
+      </text>
+      <text x="10" y="48" font-family="sans-serif" font-size="7" fill="#cbd5e1">
+        Auditoría inmutable para Junta.
+      </text>
+      <text x="10" y="64" font-family="sans-serif" font-size="7" font-weight="bold" fill="#38bdf8">
+        🛡️ Anti-Terramoda Ltda.
+      </text>
+    </g>
+  </g>
+
+  <!-- Tarjeta Pie de Resumen -->
+  <g transform="translate(30, 520)">
+    <rect width="540" height="56" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+    <text x="18" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="800" fill="#38bdf8">
+      REDISEÑO SOCIOTÉCNICO: TECNOLOGÍA + PROCEDIMIENTOS + GENTE
+    </text>
+    <text x="18" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#e2e8f0">
+      • ERP Cloud Textil • Workflows con Cero Papel • Pantallas táctiles para operarias • Meritocracia en RRHH.
+    </text>
+  </g>
+</svg>
