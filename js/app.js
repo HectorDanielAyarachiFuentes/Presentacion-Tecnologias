@@ -485,9 +485,9 @@ class PresentationApp {
             </div>
             <p class="caratula-carrera">Licenciatura en Recursos Humanos | Tecnologías de la Información para la Gestión 2026</p>
             <div class="caratula-practicas-pills">
-              <span class="practica-pill"><strong>Act. 6:</strong> Mapeo Sistémico Organizacional</span>
-              <span class="practica-pill"><strong>Act. 8:</strong> Ficha de Diagnóstico y Rediseño de Información Organizacional</span>
-              <span class="practica-pill"><strong>Act. 9:</strong> Pirámide Organizacional y Tipos de Sistemas</span>
+              <span class="practica-pill"><strong>Módulo 1:</strong> Mapeo Sistémico Organizacional (Act. 6)</span>
+              <span class="practica-pill"><strong>Módulo 2:</strong> Ficha de Diagnóstico y Rediseño (Act. 8)</span>
+              <span class="practica-pill"><strong>Módulo 3:</strong> Pirámide y Tipos de Sistemas (Act. 9)</span>
             </div>
           </div>
 
@@ -499,15 +499,15 @@ class PresentationApp {
             <div class="caratula-wiki-list">
               <div class="caratula-wiki-item">
                 <span>📌</span>
-                <span><strong>Actividad 6: Mapeo Sistémico Organizacional:</strong> Aplicación de la TGS al ingreso de personal de salud bajo Leyes 1904/1844 en Catriel.</span>
+                <span><strong>Módulo 1 — Actividad 6 (Mapeo Sistémico):</strong> Aplicación de la TGS al ingreso de personal de salud bajo Leyes 1904/1844 en Catriel.</span>
               </div>
               <div class="caratula-wiki-item">
                 <span>📌</span>
-                <span><strong>Actividad 8: Ficha de Diagnóstico y Rediseño de Información Organizacional:</strong> Diagnóstico de las 5 preguntas y rediseño integral en Ecomoda S.A.</span>
+                <span><strong>Módulo 2 — Actividad 8 (Diagnóstico y Rediseño):</strong> Diagnóstico de las 5 preguntas cotidianas y rediseño integral ERP Cloud en Ecomoda S.A.</span>
               </div>
               <div class="caratula-wiki-item">
                 <span>📌</span>
-                <span><strong>Actividad 9: Pirámide Organizacional y Tipos de Sistemas:</strong> Alineación jerárquica de sistemas (TPS, MIS, DSS) y principio GIGO en Ecomoda S.A.</span>
+                <span><strong>Módulo 3 — Actividad 9 (Pirámide y Tipos de Sistemas):</strong> Alineación jerárquica de sistemas (TPS, MIS, DSS) y principio GIGO en Ecomoda S.A.</span>
               </div>
             </div>
           </div>
@@ -741,7 +741,7 @@ class PresentationApp {
 
     const url = (gifData.url || "").trim();
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm") || url.toLowerCase().endsWith(".mov");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.7` : `${url}?v=5.7`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.8` : `${url}?v=5.8`) : url;
 
     if (url !== "") {
       if (isVideo) {
@@ -861,7 +861,7 @@ class PresentationApp {
     }
 
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.7` : `${url}?v=5.7`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.8` : `${url}?v=5.8`) : url;
 
     if (isVideo) {
       if (this.floatingDock) this.floatingDock.style.display = "none";

@@ -105,7 +105,7 @@
     <rect width="540" height="42" rx="7" fill="rgba(15, 23, 42, 0.92)" stroke="rgba(245,158,11,0.5)" stroke-width="1.5"/>
     <circle cx="22" cy="21" r="6.5" fill="#f59e0b" filter="url(#glowGold)" class="anim-gold-halo"/>
     <text x="38" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" letter-spacing="0.3">
-      PIRÁMIDE TIG: TPS, MIS Y DSS
+      MÓDULO 3: PIRÁMIDE TIG (TPS, MIS, DSS)
     </text>
     <g transform="translate(425, 9)">
       <rect width="95" height="24" rx="5" fill="#d97706"/>
