@@ -60,10 +60,10 @@ const PRESENTACION_DATA = {
   // 6 Estaciones para el Dock Superior
   estaciones: [
     { numero: 1, etiqueta: "Carátula", tooltip: "Filmina 1: Carátula e Introducción" },
-    { numero: 2, etiqueta: "Act. 6 (Hospital)", tooltip: "Filmina 2: Actividad 6 - Hospital Catriel (TGS)" },
-    { numero: 3, etiqueta: "Act. 8 (Diagnóstico)", tooltip: "Filmina 3: Actividad 8 - Diagnóstico Ecomoda" },
-    { numero: 4, etiqueta: "Act. 8 (Rediseño)", tooltip: "Filmina 4: Actividad 8 - Propuesta de Rediseño" },
-    { numero: 5, etiqueta: "Act. 9 (Pirámide)", tooltip: "Filmina 5: Actividad 9 - Pirámide y Sistemas (TPS, MIS, DSS)" },
+    { numero: 2, etiqueta: "Act. 6 (Mapeo)", tooltip: "Filmina 2: Actividad 6 - Mapeo Sistémico Organizacional (Catriel)" },
+    { numero: 3, etiqueta: "Act. 8 (Diagnóstico)", tooltip: "Filmina 3: Actividad 8 - Ficha de Diagnóstico de Información" },
+    { numero: 4, etiqueta: "Act. 8 (Rediseño)", tooltip: "Filmina 4: Actividad 8 - Ficha de Rediseño de Información" },
+    { numero: 5, etiqueta: "Act. 9 (Pirámide)", tooltip: "Filmina 5: Actividad 9 - Pirámide Organizacional y Tipos de Sistemas" },
     { numero: 6, etiqueta: "Cierre", tooltip: "Filmina 6: Conclusiones para Recursos Humanos" }
   ],
 
@@ -108,13 +108,13 @@ const PRESENTACION_DATA = {
       ],
       puntosClave: [
         "<strong>Objetivo:</strong> Contarles en 5 minutos cómo desarrollamos las tres prácticas solicitadas por la cátedra para completar la Wiki.",
-        "<strong>Actividad 6 (Salud Pública):</strong> Mapeamos cómo entra el personal al Hospital de Catriel usando Teoría de Sistemas (con Ileana y Lucas).",
-        "<strong>Actividad 8 (Ecomoda - Diagnóstico):</strong> Detectamos el desorden de información: datos escondidos, balances en Paint y chismes de pasillo.",
-        "<strong>Actividad 8 (Ecomoda - Rediseño):</strong> Planteamos soluciones reales: sistema en la nube, cero papel y reglas claras para evitar fraudes.",
-        "<strong>Actividad 9 (Ecomoda - Pirámide):</strong> Ordenamos qué sistema necesita cada puesto, desde las costureras hasta la presidencia (TPS, MIS y DSS)."
+        "<strong>Actividad 6:</strong> Mapeo Sistémico Organizacional en el Hospital «Cecilia Grierson» de Catriel (TGS con Ileana y Lucas).",
+        "<strong>Actividad 8:</strong> Ficha de Diagnóstico de Información Organizacional en Ecomoda S.A. (las 5 preguntas de gestión).",
+        "<strong>Actividad 8:</strong> Ficha de Rediseño de Información Organizacional en Ecomoda S.A. (ERP Cloud, Cero Papel y automatización).",
+        "<strong>Actividad 9:</strong> Pirámide Organizacional y Tipos de Sistemas en Ecomoda S.A. (TPS, MIS y DSS anti-fraude)."
       ],
       metadatosFooter: "CURZAS · UNCo • Licenciatura en Recursos Humanos • Exposición de Trabajos Prácticos",
-      guionOrador: "Buenas tardes a todos. Con Andrea les vamos a contar en 5 minutos cómo resolvimos las tres prácticas para la wiki. Arrancamos con un caso de salud pública en Catriel viendo cómo el entorno petrolero complica la llegada de médicos, y después nos metimos de lleno en Ecomoda para ordenar el descontrol de información, rediseñar los canales y alinear los sistemas desde el taller hasta la gerencia.",
+      guionOrador: "Buenas tardes a todos. Con Andrea les vamos a contar en 5 minutos cómo resolvimos las tres prácticas para la wiki. Arrancamos con el Mapeo Sistémico Organizacional del Hospital de Catriel viendo cómo el entorno petrolero complica la llegada de médicos. Luego abordamos la Ficha de Diagnóstico y Rediseño de Información Organizacional en Ecomoda S.A., y finalizamos con la Pirámide Organizacional y Tipos de Sistemas para alinear toda la jerarquía.",
       gif: {
         url: "assets/gifs/1.mp4",
         placeholderTitulo: "Video 1: Apertura e Identidad del Equipo",
@@ -125,17 +125,17 @@ const PRESENTACION_DATA = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // FILMINA 2: ACTIVIDAD 6 — MAPEO SISTÉMICO HOSPITAL CATRIEL (~45 segundos)
+    // FILMINA 2: ACTIVIDAD 6 — MAPEO SISTÉMICO ORGANIZACIONAL (~45 segundos)
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: "slide_2",
       numero: 2,
       tipo: "catriel_matrix",
-      bloque: "ACTIVIDAD 6 · TEORÍA DE SISTEMAS",
-      badge: "ACTIVIDAD 6 • HOSPITAL CATRIEL",
+      bloque: "ACTIVIDAD 6 · MAPEO SISTÉMICO ORGANIZACIONAL",
+      badge: "ACTIVIDAD 6 • MAPEO SISTÉMICO ORGANIZACIONAL",
       tiempoEstimado: "0:30 - 1:15 (45s)",
-      titulo: "Actividad 6: El Ingreso de Personal en el Hospital de Catriel",
-      subtitulo: "Qué hicimos: analizamos cómo se selecciona e incorpora al equipo de salud usando la Teoría General de Sistemas",
+      titulo: "Actividad 6: Mapeo Sistémico Organizacional",
+      subtitulo: "Hospital Área Programa Catriel • Aplicación de la TGS al ingreso de personal de salud bajo Leyes 1904 y 1844",
       catrielData: {
         equipoMencion: "Trabajo en equipo con nuestros compañeros Ileana Avendaño y Lucas Curaqueo.",
         marcoNormativo: "Hospital Cecilia Grierson (Catriel) • Leyes Provinciales N° 1904 (Salud) y N° 1844 (Administración).",
@@ -192,8 +192,8 @@ const PRESENTACION_DATA = {
         "<strong>Las 6 Etapas:</strong> Relevamiento ➔ Convocatoria ➔ Revisión de CVs ➔ Entrevistas y psicotécnico ➔ Junta médica ➔ Alta y entrega de vivienda.",
         "<strong>El Feedback Clave:</strong> Si hay renuncias tempranas, el circuito aprende: se ajusta el perfil buscando arraigo y se mejora el incentivo de vivienda."
       ],
-      metadatosFooter: "Actividad 6 • Hospital de Catriel (Río Negro) • Teoría de Sistemas aplicada a la Selección de Personal",
-      guionOrador: "En la Actividad 6, que hicimos con Ileana y Lucas, analizamos cómo contrata médicos el Hospital de Catriel. El gran problema que encontramos es el contexto petrolero: la plata del petróleo hace que los alquileres sean imposibles para un sueldo público. Por eso, el sistema no termina cuando el médico firma el contrato: si no se le da vivienda o no se siente acompañado, renuncia a los meses. Ahí es clave la retroalimentación: aprender por qué se van para mejorar las próximas búsquedas.",
+      metadatosFooter: "Actividad 6 • Mapeo Sistémico Organizacional • Hospital de Catriel (Leyes 1904 y 1844)",
+      guionOrador: "En la Actividad 6, que desarrollamos junto a Ileana y Lucas bajo el título de Mapeo Sistémico Organizacional, analizamos cómo contrata médicos el Hospital de Catriel. El gran problema que encontramos es el contexto petrolero: la plata del petróleo hace que los alquileres sean imposibles para un sueldo público. Por eso, el sistema no termina cuando el médico firma el contrato: si no se le da vivienda o no se siente acompañado, renuncia a los meses. Ahí es clave la retroalimentación: aprender por qué se van para mejorar las próximas búsquedas.",
       gif: {
         url: "assets/gifs/2.mp4",
         placeholderTitulo: "Video 2: Circuito Sistémico del Hospital de Catriel",
@@ -204,17 +204,17 @@ const PRESENTACION_DATA = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // FILMINA 3: ACTIVIDAD 8 — DIAGNÓSTICO EN ECOMODA S.A. (~1m 15s)
+    // FILMINA 3: ACTIVIDAD 8 — FICHA DE DIAGNÓSTICO (~1m 15s)
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: "slide_3",
       numero: 3,
       tipo: "ecomoda_diagnostico",
-      bloque: "ACTIVIDAD 8 · DIAGNÓSTICO EN ECOMODA",
-      badge: "ACTIVIDAD 8 • FALLAS DETECTADAS",
+      bloque: "ACTIVIDAD 8 · FICHA DE DIAGNÓSTICO",
+      badge: "ACTIVIDAD 8 • FICHA DE DIAGNÓSTICO",
       tiempoEstimado: "1:15 - 2:30 (75s)",
-      titulo: "Actividad 8: El Caos de Información en Ecomoda S.A.",
-      subtitulo: "Qué descubrimos: respondimos las 5 preguntas del práctico para detectar por qué la empresa era un desorden",
+      titulo: "Actividad 8: Ficha de Diagnóstico de Información Organizacional",
+      subtitulo: "Ecomoda S.A. • Matriz diagnóstica de las 5 preguntas cotidianas de gestión de la cátedra",
       ecomodaDiagData: {
         preguntas: [
           {
@@ -262,8 +262,8 @@ const PRESENTACION_DATA = {
         "<strong>4. Carga y Uso:</strong> Betty sobrecargada trabajando 14 horas al día, Saúl cambiando asistencias a dedo y directivos decidiendo a ciegas.",
         "<strong>5. Normas y Falla Crítica:</strong> Cero manuales escritos, contrataciones por acomodo (Patricia) y creación clandestina de la empresa fantasma <em>Terramoda</em>."
       ],
-      metadatosFooter: "Actividad 8 · Diagnóstico Ecomoda S.A. • Silos de Datos, Balances en Paint y Terramoda",
-      guionOrador: "En la Actividad 8 analizamos Ecomoda respondiendo a las 5 preguntas que nos dio la cátedra. Descubrimos que la información era un caos total: Betty guardaba los costos reales solo en su computadora, armaban balances falsos en disquetes y hasta los retocaban en Paint. Las órdenes viajaban en moto con Freddy o a los gritos con Armando, y la gente dependía de los chismes del Cuartel para saber qué pasaba. Además, en Recursos Humanos se manejaban con puro favoritismo, explotando a Betty con 14 horas de trabajo al día.",
+      metadatosFooter: "Actividad 8 · Ficha de Diagnóstico de Información Organizacional • Ecomoda S.A.",
+      guionOrador: "En la Actividad 8 completamos la Ficha de Diagnóstico de Información Organizacional en Ecomoda respondiendo a las 5 preguntas que nos dio la cátedra. Descubrimos que la información era un caos total: Betty guardaba los costos reales solo en su computadora, armaban balances falsos en disquetes y hasta los retocaban en Paint. Las órdenes viajaban en moto con Freddy o a los gritos con Armando, y la gente dependía de los chismes del Cuartel para saber qué pasaba. Además, en Recursos Humanos se manejaban con puro favoritismo, explotando a Betty con 14 horas de trabajo al día.",
       gif: {
         url: "assets/svg/slide3_ecomoda_caos.svg",
         placeholderTitulo: "Esquema Isométrico: Silos y Caos en Ecomoda",
@@ -274,17 +274,17 @@ const PRESENTACION_DATA = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // FILMINA 4: ACTIVIDAD 8 — REDISEÑO DE CANALES EN ECOMODA (~1 minuto)
+    // FILMINA 4: ACTIVIDAD 8 — FICHA DE REDISEÑO (~1 minuto)
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: "slide_4",
       numero: 4,
       tipo: "ecomoda_rediseno",
-      bloque: "ACTIVIDAD 8 · PROPUESTA DE MEJORA",
-      badge: "ACTIVIDAD 8 • CÓMO LO RESOLVIMOS",
+      bloque: "ACTIVIDAD 8 · FICHA DE REDISEÑO",
+      badge: "ACTIVIDAD 8 • FICHA DE REDISEÑO",
       tiempoEstimado: "2:30 - 3:30 (60s)",
-      titulo: "Actividad 8: Cómo Rediseñamos los Sistemas y Canales",
-      subtitulo: "Qué propusimos: solucionamos los problemas analizando Tecnología, Organización y Administración, más 3 reglas automáticas",
+      titulo: "Actividad 8: Ficha de Rediseño de Información Organizacional",
+      subtitulo: "Ecomoda S.A. • Soluciones integrales bajo las 3 miradas y 3 requerimientos automáticos",
       ecomodaRedesignData: {
         miradas: [
           {
@@ -344,8 +344,8 @@ const PRESENTACION_DATA = {
         "<strong>3. Mirada Administrativa (Cero Papel y Mérito):</strong> Eliminación de notas en papel, prohibición penal de empresas truchas como Terramoda e ingreso por mérito.",
         "<strong>3 Pedidos Automáticos al Sistema:</strong> 1. Bloqueo de gastos excesivos ➔ 2. Liquidación de sueldos por huella digital ➔ 3. Balances automáticos auditados."
       ],
-      metadatosFooter: "Actividad 8 · Propuesta de Rediseño • ERP en la Nube, Intranet Oficial y Meritocracia",
-      guionOrador: "Para arreglar Ecomoda propusimos soluciones concretas en tres áreas. En tecnología, planteamos un sistema único en la nube para que no haya datos escondidos, y un tablero donde la presidencia vea finanzas, producción y personal en tiempo real. En la parte humana, pusimos pantallas táctiles fáciles para las costureras, capacitamos a Patricia y al Cuartel en computación, y le dimos una tablet a Freddy. Y en las reglas, eliminamos los papeles físicos, prohibimos por estatuto inventar empresas fantasma como Terramoda, y fijamos 3 pedidos automáticos: bloqueo de gastos que se pasen del presupuesto, sueldos por huella digital y balances contables automáticos.",
+      metadatosFooter: "Actividad 8 · Ficha de Rediseño de Información Organizacional • Ecomoda S.A.",
+      guionOrador: "Para rediseñar Ecomoda completamos la Ficha de Rediseño de Información Organizacional con soluciones en tres áreas: tecnología con ERP en la nube y Tablero Ejecutivo; personas capacitando a Doña Inés, Patricia y Freddy; y administración con política Cero Papel y sanción penal a empresas fantasma como Terramoda.",
       gif: {
         url: "assets/svg/slide4_ecomoda_rediseno.svg",
         placeholderTitulo: "Esquema Isométrico: ERP Cloud & Cero Papel",
@@ -356,17 +356,17 @@ const PRESENTACION_DATA = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // FILMINA 5: ACTIVIDAD 9 — PIRÁMIDE Y TIPOS DE SISTEMAS (~1 minuto)
+    // FILMINA 5: ACTIVIDAD 9 — PIRÁMIDE ORGANIZACIONAL Y TIPOS DE SISTEMAS (~1m)
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: "slide_5",
       numero: 5,
       tipo: "ecomoda_piramide",
-      bloque: "ACTIVIDAD 9 · PIRÁMIDE DE SISTEMAS",
-      badge: "ACTIVIDAD 9 • TPS, MIS Y DSS",
+      bloque: "ACTIVIDAD 9 · PIRÁMIDE ORGANIZACIONAL Y TIPOS DE SISTEMAS",
+      badge: "ACTIVIDAD 9 • PIRÁMIDE Y TIPOS DE SISTEMAS",
       tiempoEstimado: "3:30 - 4:30 (60s)",
-      titulo: "Actividad 9: Pirámide de Ecomoda y Tipos de Sistemas",
-      subtitulo: "Qué hicimos: ubicamos a cada empleado en la pirámide organizacional y le asignamos el sistema que necesita",
+      titulo: "Actividad 9: Pirámide Organizacional y Tipos de Sistemas",
+      subtitulo: "Ecomoda S.A. • Alineación jerárquica de sistemas (TPS, MIS y DSS) y principio GIGO",
       piramideData: {
         niveles: [
           {
@@ -403,7 +403,7 @@ const PRESENTACION_DATA = {
         "<strong>Bloqueo Anti-Terramoda:</strong> Al salir los datos directamente de las ventas y compras reales, <em>es imposible armar balances truchos en Paint o desviar dinero a empresas fantasma.</em>",
         "<strong>Límites Claros:</strong> Betty deja de estar en los tres niveles a la vez (operaria, jefa y asistente personal), recuperando una jornada de trabajo sana."
       ],
-      metadatosFooter: "Actividad 9 · Pirámide de Ecomoda • Alineación de TPS, MIS y DSS para la Gestión",
+      metadatosFooter: "Actividad 9 · Pirámide Organizacional y Tipos de Sistemas • Ecomoda S.A.",
       guionOrador: "En la Actividad 9 ordenamos la pirámide de la empresa para que cada uno use el sistema que le corresponde. En la base pusimos el sistema TPS con código de barras y reloj biométrico, para que Doña Inés y las costureras no pierdan tiempo anotando a mano. En el medio pusimos sistemas MIS, con reportes semanales para que Lombardi controle el gasto de tela y Saúl no pueda manipular las faltas. Y en la cúspide pusimos un sistema DSS para que la Junta Directiva vea tableros en vivo. Así, Armando nunca hubiera podido ocultar la quiebra ni inventar Terramoda.",
       gif: {
         url: "assets/svg/slide5_ecomoda_piramide.svg",

@@ -4523,6 +4523,73 @@ body {
   margin-left: 0.4rem;
 }
 
+.media-lightbox-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lightbox-zoom-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(180, 131, 36, 0.4);
+  border-radius: 8px;
+  padding: 0.2rem 0.45rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.btn-lightbox-zoom {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f8fafc;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  padding: 0;
+}
+
+.btn-lightbox-zoom:hover:not(:disabled) {
+  background: var(--gold-main);
+  color: #0b1324;
+  border-color: var(--gold-main);
+  transform: scale(1.06);
+}
+
+.btn-lightbox-zoom:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.btn-lightbox-zoom:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.lightbox-zoom-level {
+  font-family: 'Segoe UI', monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #fef08a;
+  min-width: 48px;
+  text-align: center;
+  padding: 0.2rem 0.35rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+  user-select: none;
+}
+
+.lightbox-zoom-level:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
 .media-lightbox-close {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -4555,6 +4622,17 @@ body {
   width: 100%;
   height: 100%;
   min-height: 0;
+  position: relative;
+  user-select: none;
+  cursor: zoom-in;
+}
+
+.media-lightbox-body.is-zoomed {
+  cursor: grab;
+}
+
+.media-lightbox-body.is-dragging {
+  cursor: grabbing !important;
 }
 
 .lightbox-media-img {
@@ -4567,6 +4645,19 @@ body {
   border-radius: 8px;
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
   filter: drop-shadow(0 0 18px rgba(180, 131, 36, 0.2));
+  transform-origin: center center;
+  transition: transform 0.18s cubic-bezier(0.2, 0, 0, 1);
+  will-change: transform;
+  pointer-events: auto;
+}
+
+.media-lightbox-body.is-zoomed .lightbox-media-img {
+  cursor: grab;
+}
+
+.media-lightbox-body.is-dragging .lightbox-media-img {
+  cursor: grabbing !important;
+  transition: none !important;
 }
 
 .lightbox-media-video {

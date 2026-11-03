@@ -145,64 +145,65 @@
     <path d="M100 110 L190 60 L190 75 L100 125 Z" fill="#0f172a"/>
     
     <!-- Pantalla Táctil con Código de Barras -->
-    <rect x="60" y="30" width="80" height="52" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
-    <text x="68" y="44" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#34d399">TALLER CONFECCIÓN</text>
+    <rect x="50" y="26" width="100" height="58" rx="5" fill="#0f172a" stroke="#10b981" stroke-width="1.8"/>
+    <text x="58" y="42" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="900" fill="#34d399">TALLER CORTE</text>
     
     <!-- Código de barras y láser de lectura animado -->
-    <g transform="translate(70, 50)">
-      <line x1="0" y1="0" x2="0" y2="20" stroke="#ffffff" stroke-width="2"/>
-      <line x1="6" y1="0" x2="6" y2="20" stroke="#ffffff" stroke-width="1"/>
-      <line x1="12" y1="0" x2="12" y2="20" stroke="#ffffff" stroke-width="3"/>
-      <line x1="18" y1="0" x2="18" y2="20" stroke="#ffffff" stroke-width="1"/>
-      <line x1="24" y1="0" x2="24" y2="20" stroke="#ffffff" stroke-width="2"/>
-      <line x1="32" y1="0" x2="32" y2="20" stroke="#ffffff" stroke-width="4"/>
-      <line x1="42" y1="0" x2="42" y2="20" stroke="#ffffff" stroke-width="1"/>
-      <line x1="50" y1="0" x2="50" y2="20" stroke="#ffffff" stroke-width="3"/>
+    <g transform="translate(62, 48)">
+      <line x1="0" y1="0" x2="0" y2="24" stroke="#ffffff" stroke-width="2.5"/>
+      <line x1="8" y1="0" x2="8" y2="24" stroke="#ffffff" stroke-width="1.5"/>
+      <line x1="16" y1="0" x2="16" y2="24" stroke="#ffffff" stroke-width="3.5"/>
+      <line x1="24" y1="0" x2="24" y2="24" stroke="#ffffff" stroke-width="1.5"/>
+      <line x1="32" y1="0" x2="32" y2="24" stroke="#ffffff" stroke-width="2.5"/>
+      <line x1="42" y1="0" x2="42" y2="24" stroke="#ffffff" stroke-width="4"/>
+      <line x1="54" y1="0" x2="54" y2="24" stroke="#ffffff" stroke-width="1.5"/>
+      <line x1="64" y1="0" x2="64" y2="24" stroke="#ffffff" stroke-width="3.5"/>
+      <line x1="74" y1="0" x2="74" y2="24" stroke="#ffffff" stroke-width="2"/>
       
       <!-- Láser de lectura verde animado -->
       <g class="anim-laser">
-        <line x1="-5" y1="0" x2="55" y2="0" stroke="#10b981" stroke-width="2" filter="url(#glowGreen)"/>
+        <line x1="-5" y1="0" x2="80" y2="0" stroke="#10b981" stroke-width="2.5" filter="url(#glowGreen)"/>
       </g>
     </g>
 
     <!-- Etiqueta Doña Inés -->
-    <rect x="35" y="98" width="130" height="20" rx="3" fill="rgba(6, 78, 59, 0.95)" stroke="#10b981" stroke-width="1"/>
-    <text x="44" y="112" font-family="sans-serif" font-size="7" font-weight="bold" fill="#ecfdf5">
+    <rect x="25" y="96" width="150" height="24" rx="4" fill="rgba(6, 78, 59, 0.95)" stroke="#10b981" stroke-width="1.2"/>
+    <text x="32" y="112" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#ecfdf5">
       ✂️ Terminal Táctil (Doña Inés)
     </text>
   </g>
 
   <!-- NODO CENTRAL: DASHBOARD DE PRESIDENCIA (4 CUADRANTES EN TIEMPO REAL) -->
-  <g transform="translate(210, 270)" filter="url(#shadowRedesign)">
-    <rect x="0" y="0" width="180" height="120" rx="8" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" stroke-width="2"/>
-    <rect x="0" y="0" width="180" height="24" rx="8" fill="#0369a1"/>
-    <text x="12" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="bold" fill="#ffffff">
-      📊 DASHBOARD PRESIDENCIA (4 CUADRANTES)
+  <g transform="translate(195, 260)" filter="url(#shadowRedesign)">
+    <rect x="0" y="0" width="210" height="135" rx="8" fill="rgba(15, 23, 42, 0.98)" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="0" y="0" width="210" height="26" rx="8" fill="#0369a1"/>
+    <text x="12" y="17" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="900" fill="#ffffff">
+      📊 TABLERO EJECUTIVO (4 ÁREAS)
     </text>
 
     <!-- Cuadrante 1: Financiero -->
-    <rect x="8" y="30" width="78" height="38" rx="3" fill="#1e293b"/>
-    <text x="14" y="42" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#38bdf8">FINANZAS</text>
-    <text x="14" y="54" font-family="sans-serif" font-size="9" font-weight="bold" fill="#10b981" class="anim-kpi">EBITDA +22%</text>
-    <text x="14" y="63" font-family="monospace" font-size="5.5" fill="#94a3b8">SSOT Auditado</text>
+    <rect x="8" y="32" width="92" height="44" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="45" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#38bdf8">1. FINANZAS</text>
+    <text x="14" y="59" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="900" fill="#10b981" class="anim-kpi">EBITDA +22%</text>
+    <text x="14" y="70" font-family="'Segoe UI', monospace" font-size="7.5" font-weight="bold" fill="#bae6fd">SSOT Inmutable</text>
 
     <!-- Cuadrante 2: Producción Lombardi -->
-    <rect x="94" y="30" width="78" height="38" rx="3" fill="#1e293b"/>
-    <text x="100" y="42" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#f59e0b">PRODUCCIÓN</text>
-    <text x="100" y="54" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fef08a">Mermas: 4.2%</text>
-    <text x="100" y="63" font-family="monospace" font-size="5.5" fill="#10b981">Control OP 408</text>
+    <rect x="110" y="32" width="92" height="44" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="116" y="45" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#f59e0b">2. PRODUCCIÓN</text>
+    <text x="116" y="59" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="900" fill="#fef08a">Merma: 4.2%</text>
+    <text x="116" y="70" font-family="'Segoe UI', monospace" font-size="7.5" font-weight="bold" fill="#34d399">Control de Telas</text>
 
     <!-- Cuadrante 3: Comercial -->
-    <rect x="8" y="74" width="78" height="38" rx="3" fill="#1e293b"/>
-    <text x="14" y="86" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#a855f7">COMERCIAL</text>
-    <text x="14" y="98" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#f3e8ff">Boutiques POS</text>
-    <text x="14" y="106" font-family="monospace" font-size="5.5" fill="#94a3b8">Stock Central</text>
+    <rect x="8" y="82" width="92" height="44" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="95" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#c084fc">3. VENTAS</text>
+    <text x="14" y="108" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#f3e8ff">Boutiques POS</text>
+    <text x="14" y="120" font-family="'Segoe UI', monospace" font-size="7.5" font-weight="bold" fill="#cbd5e1">Stock en Vivo</text>
 
     <!-- Cuadrante 4: Talento Humano / Biometría -->
-    <rect x="94" y="74" width="78" height="38" rx="3" fill="#1e293b"/>
-    <text x="100" y="86" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#34d399">RRHH BIOMETRÍA</text>
-    <text x="100" y="98" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#ecfdf5">Fichadas 100%</text>
-    <text x="100" y="106" font-family="monospace" font-size="5.5" fill="#34d399">Cero favoritismo</text>
+    <rect x="110" y="82" width="92" height="44" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="116" y="95" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#34d399">4. RRHH HUELLA</text>
+    <text x="116" y="108" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#ecfdf5">Asistencia 100%</text>
+    <text x="116" y="120" font-family="'Segoe UI', monospace" font-size="7.5" font-weight="bold" fill="#a7f3d0">Sin Favoritismo</text>
   </g>
 
   <!-- NODO DERECHO: RRHH, FREDDY DIGITAL & MERITOCRACIA -->
@@ -213,70 +214,70 @@
     <path d="M100 110 L190 60 L190 75 L100 125 Z" fill="#0f172a"/>
 
     <!-- Tablet de Freddy Contreras con Firma Digital -->
-    <rect x="50" y="25" width="100" height="60" rx="5" fill="#0f172a" stroke="#eab308" stroke-width="1.5"/>
-    <text x="58" y="38" font-family="sans-serif" font-size="7" font-weight="bold" fill="#fde68a">RRHH &amp; LOGÍSTICA</text>
-    <rect x="58" y="44" width="84" height="24" rx="2" fill="#1e293b"/>
-    <text x="64" y="55" font-family="monospace" font-size="6" fill="#38bdf8">Ticket #4092</text>
-    <text x="64" y="63" font-family="monospace" font-size="6" fill="#10b981">✓ Firma Digital</text>
-    <circle cx="134" cy="56" r="4" class="anim-audit-led"/>
+    <rect x="45" y="22" width="110" height="66" rx="6" fill="#0f172a" stroke="#eab308" stroke-width="1.8"/>
+    <text x="54" y="37" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="900" fill="#fde68a">RRHH &amp; LOGÍSTICA</text>
+    <rect x="52" y="43" width="96" height="28" rx="3" fill="#1e293b"/>
+    <text x="58" y="55" font-family="monospace" font-size="7.5" font-weight="bold" fill="#38bdf8">Ticket #4092</text>
+    <text x="58" y="65" font-family="monospace" font-size="7.5" font-weight="bold" fill="#10b981">✓ Firma Digital</text>
+    <circle cx="140" cy="57" r="4.5" class="anim-audit-led"/>
 
     <!-- Etiqueta Freddy & Mérito -->
-    <rect x="35" y="98" width="130" height="20" rx="3" fill="rgba(113, 63, 18, 0.95)" stroke="#eab308" stroke-width="1"/>
-    <text x="42" y="112" font-family="sans-serif" font-size="7" font-weight="bold" fill="#fef08a">
+    <rect x="25" y="96" width="150" height="24" rx="4" fill="rgba(113, 63, 18, 0.95)" stroke="#eab308" stroke-width="1.2"/>
+    <text x="32" y="112" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#fef08a">
       📱 Tablet Móvil (Freddy)
     </text>
   </g>
 
   <!-- 3 PEDIDOS AL SISTEMA (REGLAS Y BARRERA ANTI-FRAUDE) -->
-  <g transform="translate(30, 420)">
+  <g transform="translate(30, 415)">
     <!-- Caja Pedido 1: Límite Presupuestario -->
     <g transform="translate(0, 0)">
-      <rect width="170" height="75" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#ef4444" stroke-width="1.2"/>
-      <text x="10" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#fca5a5">
+      <rect width="170" height="82" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="12" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="900" fill="#fca5a5">
         1. BLOQUEO COMPRAS
       </text>
-      <text x="10" y="36" font-family="sans-serif" font-size="7" fill="#cbd5e1">
-        Tope presupuestario automático
+      <text x="12" y="37" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="600" fill="#cbd5e1">
+        Tope automático de gastos
       </text>
-      <text x="10" y="48" font-family="sans-serif" font-size="7" fill="#cbd5e1">
+      <text x="12" y="51" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="600" fill="#cbd5e1">
         para telas de Hugo Lombardi.
       </text>
-      <text x="10" y="64" font-family="sans-serif" font-size="7" font-weight="bold" fill="#f87171">
+      <text x="12" y="70" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="800" fill="#f87171">
         🔒 Bloqueo en ERP Cloud
       </text>
     </g>
 
     <!-- Caja Pedido 2: Nómina Biométrica -->
     <g transform="translate(185, 0)">
-      <rect width="170" height="75" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#10b981" stroke-width="1.2"/>
-      <text x="10" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#6ee7b7">
+      <rect width="170" height="82" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="#10b981" stroke-width="1.5"/>
+      <text x="12" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="900" fill="#6ee7b7">
         2. NÓMINA OBJETIVA
       </text>
-      <text x="10" y="36" font-family="sans-serif" font-size="7" fill="#cbd5e1">
-        Descuentos por huella biométrica
+      <text x="12" y="37" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="600" fill="#cbd5e1">
+        Llegadas tarde por huella
       </text>
-      <text x="10" y="48" font-family="sans-serif" font-size="7" fill="#cbd5e1">
-        (Patricia) y horas extras reales.
+      <text x="12" y="51" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="600" fill="#cbd5e1">
+        y horas extras sin dedazos.
       </text>
-      <text x="10" y="64" font-family="sans-serif" font-size="7" font-weight="bold" fill="#34d399">
+      <text x="12" y="70" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="800" fill="#34d399">
         ✓ Liquidación sin sesgos
       </text>
     </g>
 
     <!-- Caja Pedido 3: Balance Auditado Inmutable -->
     <g transform="translate(370, 0)">
-      <rect width="170" height="75" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#38bdf8" stroke-width="1.2"/>
-      <text x="10" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#7dd3fc">
+      <rect width="170" height="82" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="12" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="900" fill="#7dd3fc">
         3. TRAZABILIDAD TOTAL
       </text>
-      <text x="10" y="36" font-family="sans-serif" font-size="7" fill="#cbd5e1">
-        Estados contables en tiempo real.
+      <text x="12" y="37" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="600" fill="#cbd5e1">
+        Estados contables en vivo
       </text>
-      <text x="10" y="48" font-family="sans-serif" font-size="7" fill="#cbd5e1">
-        Auditoría inmutable para Junta.
+      <text x="12" y="51" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="600" fill="#cbd5e1">
+        auditados para la Junta.
       </text>
-      <text x="10" y="64" font-family="sans-serif" font-size="7" font-weight="bold" fill="#38bdf8">
-        🛡️ Anti-Terramoda Ltda.
+      <text x="12" y="70" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="800" fill="#38bdf8">
+        🛡️ Cero fraudes en Paint
       </text>
     </g>
   </g>
@@ -284,10 +285,10 @@
   <!-- Tarjeta Pie de Resumen -->
   <g transform="translate(30, 520)">
     <rect width="540" height="56" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
-    <text x="18" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="800" fill="#38bdf8">
+    <text x="18" y="23" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#38bdf8">
       REDISEÑO SOCIOTÉCNICO: TECNOLOGÍA + PROCEDIMIENTOS + GENTE
     </text>
-    <text x="18" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#e2e8f0">
+    <text x="18" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" fill="#e2e8f0">
       • ERP Cloud Textil • Workflows con Cero Papel • Pantallas táctiles para operarias • Meritocracia en RRHH.
     </text>
   </g>

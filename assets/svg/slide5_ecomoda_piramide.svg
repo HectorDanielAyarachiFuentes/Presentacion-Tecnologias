@@ -132,15 +132,15 @@
       <path d="M300 470 L500 370 L500 415 L300 515 Z" fill="url(#tpsRight)"/>
 
       <!-- Detalles del Nivel Operativo TPS: Sensores y Terminales -->
-      <g transform="translate(140, 395)">
-        <rect x="0" y="0" width="110" height="24" rx="3" fill="rgba(6, 78, 59, 0.95)" stroke="#34d399" stroke-width="1"/>
-        <text x="10" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#ecfdf5">
+      <g transform="translate(130, 395)">
+        <rect x="0" y="0" width="130" height="26" rx="4" fill="rgba(6, 78, 59, 0.96)" stroke="#34d399" stroke-width="1.2"/>
+        <text x="12" y="17" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="900" fill="#ecfdf5">
           BASE OPERATIVA: TPS
         </text>
       </g>
-      <circle cx="280" cy="485" r="3" class="anim-led-green"/>
-      <circle cx="320" cy="485" r="3" class="anim-led-green"/>
-      <text x="300" y="500" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#a7f3d0" text-anchor="middle">
+      <circle cx="270" cy="485" r="3.5" class="anim-led-green"/>
+      <circle cx="330" cy="485" r="3.5" class="anim-led-green"/>
+      <text x="300" y="500" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#a7f3d0" text-anchor="middle">
         Doña Inés • Taller de Costura • Código de Barras • Biometría
       </text>
     </g>
@@ -157,14 +157,14 @@
       <path d="M300 365 L450 290 L450 335 L300 410 Z" fill="url(#misRight)"/>
 
       <!-- Detalles del Nivel Táctico MIS -->
-      <g transform="translate(170, 315)">
-        <rect x="0" y="0" width="115" height="24" rx="3" fill="rgba(30, 58, 138, 0.95)" stroke="#60a5fa" stroke-width="1"/>
-        <text x="10" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#eff6ff">
-          NIVEL TÁCTICO: MIS
+      <g transform="translate(160, 315)">
+        <rect x="0" y="0" width="130" height="26" rx="4" fill="rgba(30, 58, 138, 0.96)" stroke="#60a5fa" stroke-width="1.2"/>
+        <text x="12" y="17" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="900" fill="#eff6ff">
+          NIVEL MEDIO: MIS / SIG
         </text>
       </g>
-      <text x="300" y="390" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#bfdbfe" text-anchor="middle">
-        Beatriz Pinzón • Hugo Lombardi • Reporte Mermas • Control Nómina
+      <text x="300" y="390" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#bfdbfe" text-anchor="middle">
+        Beatriz Pinzón • Hugo Lombardi • Mermas • Control Nómina
       </text>
     </g>
 
@@ -180,18 +180,18 @@
       <path d="M300 260 L390 210 L390 250 L300 300 Z" fill="url(#dssRight)"/>
 
       <!-- Corona / Candado de Bloqueo Anti-Fraude en la Cúspide -->
-      <g transform="translate(255, 120)" class="anim-gold-halo">
-        <rect x="0" y="0" width="90" height="34" rx="5" fill="#78350f" stroke="#f59e0b" stroke-width="1.8"/>
-        <text x="10" y="15" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#fef08a">
+      <g transform="translate(245, 115)" class="anim-gold-halo">
+        <rect x="0" y="0" width="110" height="38" rx="6" fill="#78350f" stroke="#f59e0b" stroke-width="2"/>
+        <text x="12" y="17" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="900" fill="#fef08a">
           👑 DSS DIRECTIVO
         </text>
-        <text x="10" y="27" font-family="'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">
+        <text x="12" y="30" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#ffffff">
           🛡️ Anti-Terramoda
         </text>
       </g>
 
-      <text x="300" y="285" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#fde68a" text-anchor="middle">
-        Armando Mendoza • Junta Directiva • Executive Dashboard • What-If
+      <text x="300" y="285" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#fde68a" text-anchor="middle">
+        Armando Mendoza • Junta Directiva • Dashboard • Cero Fraude
       </text>
     </g>
   </g>
@@ -206,34 +206,34 @@
 
     <!-- Etiquetas del Flujo Ascendente -->
     <g transform="translate(25, 40)">
-      <rect x="0" y="0" width="70" height="42" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#f59e0b" stroke-width="1"/>
-      <text x="8" y="16" font-family="sans-serif" font-size="7" font-weight="900" fill="#fef08a">DECISIÓN</text>
-      <text x="8" y="28" font-family="sans-serif" font-size="6.5" fill="#e2e8f0">Estratégica</text>
-      <text x="8" y="38" font-family="sans-serif" font-size="6" fill="#94a3b8">Simuladores</text>
+      <rect x="0" y="0" width="70" height="44" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#f59e0b" stroke-width="1.2"/>
+      <text x="8" y="16" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#fef08a">DECISIÓN</text>
+      <text x="8" y="28" font-family="'Segoe UI', sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">Estratégica</text>
+      <text x="8" y="38" font-family="'Segoe UI', sans-serif" font-size="7" fill="#cbd5e1">Simuladores</text>
     </g>
 
     <g transform="translate(25, 145)">
-      <rect x="0" y="0" width="70" height="42" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" stroke-width="1"/>
-      <text x="8" y="16" font-family="sans-serif" font-size="7" font-weight="900" fill="#7dd3fc">CONTROL</text>
-      <text x="8" y="28" font-family="sans-serif" font-size="6.5" fill="#e2e8f0">Gerencial</text>
-      <text x="8" y="38" font-family="sans-serif" font-size="6" fill="#94a3b8">Reportes MIS</text>
+      <rect x="0" y="0" width="70" height="44" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="8" y="16" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#7dd3fc">CONTROL</text>
+      <text x="8" y="28" font-family="'Segoe UI', sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">Gerencial</text>
+      <text x="8" y="38" font-family="'Segoe UI', sans-serif" font-size="7" fill="#cbd5e1">Reportes MIS</text>
     </g>
 
     <g transform="translate(25, 250)">
-      <rect x="0" y="0" width="70" height="42" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#34d399" stroke-width="1"/>
-      <text x="8" y="16" font-family="sans-serif" font-size="7" font-weight="900" fill="#a7f3d0">CAPTURA</text>
-      <text x="8" y="28" font-family="sans-serif" font-size="6.5" fill="#e2e8f0">Transaccional</text>
-      <text x="8" y="38" font-family="sans-serif" font-size="6" fill="#94a3b8">Datos TPS</text>
+      <rect x="0" y="0" width="70" height="44" rx="4" fill="rgba(15, 23, 42, 0.95)" stroke="#34d399" stroke-width="1.2"/>
+      <text x="8" y="16" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#a7f3d0">CAPTURA</text>
+      <text x="8" y="28" font-family="'Segoe UI', sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">Operativa</text>
+      <text x="8" y="38" font-family="'Segoe UI', sans-serif" font-size="7" fill="#cbd5e1">Datos TPS</text>
     </g>
   </g>
 
   <!-- Tarjeta Pie de Resumen -->
   <g transform="translate(30, 520)">
     <rect width="540" height="56" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
-    <text x="18" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="800" fill="#f59e0b">
+    <text x="18" y="23" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#f59e0b">
       ALINEACIÓN PIRAMIDAL: PRINCIPIO GIGO (GARBAGE IN, GARBAGE OUT)
     </text>
-    <text x="18" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#e2e8f0">
+    <text x="18" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" fill="#e2e8f0">
       • Datos limpios en TPS ➔ Reportes confiables en MIS ➔ Junta directiva en DSS con balances reales anti-fraude.
     </text>
   </g>

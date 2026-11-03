@@ -120,11 +120,11 @@
     <circle cx="100" cy="38" r="16" fill="url(#greenNodeC)"/>
     <text x="94" y="44" font-family="sans-serif" font-size="16">👥</text>
     
-    <rect x="15" y="-12" width="170" height="24" rx="4" fill="rgba(6, 78, 59, 0.95)" stroke="#34d399" stroke-width="1"/>
-    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#ecfdf5" text-anchor="middle">
+    <rect x="10" y="-14" width="180" height="26" rx="5" fill="rgba(6, 78, 59, 0.98)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#ecfdf5" text-anchor="middle">
       1. PERSONAS (TALENTO HUMANO)
     </text>
-    <text x="100" y="68" font-family="sans-serif" font-size="7" font-weight="bold" fill="#a7f3d0" text-anchor="middle">
+    <text x="100" y="70" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="700" fill="#a7f3d0" text-anchor="middle">
       Humanización • Fin del Burnout • Arraigo
     </text>
   </g>
@@ -138,11 +138,11 @@
     <circle cx="100" cy="38" r="16" fill="url(#blueNode)"/>
     <text x="94" y="44" font-family="sans-serif" font-size="16">💻</text>
 
-    <rect x="15" y="-12" width="170" height="24" rx="4" fill="rgba(12, 74, 110, 0.95)" stroke="#38bdf8" stroke-width="1"/>
-    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#e0f2fe" text-anchor="middle">
+    <rect x="10" y="-14" width="180" height="26" rx="5" fill="rgba(12, 74, 110, 0.98)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#e0f2fe" text-anchor="middle">
       2. TECNOLOGÍA (TIG / ERP)
     </text>
-    <text x="100" y="68" font-family="sans-serif" font-size="7" font-weight="bold" fill="#bae6fd" text-anchor="middle">
+    <text x="100" y="70" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="700" fill="#bae6fd" text-anchor="middle">
       Cloud • TPS-MIS-DSS • SSOT Inmutable
     </text>
   </g>
@@ -156,11 +156,11 @@
     <circle cx="100" cy="38" r="16" fill="url(#goldNode)"/>
     <text x="94" y="44" font-family="sans-serif" font-size="16">⚖️</text>
 
-    <rect x="15" y="-12" width="170" height="24" rx="4" fill="rgba(120, 53, 15, 0.95)" stroke="#f59e0b" stroke-width="1"/>
-    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#fef08a" text-anchor="middle">
+    <rect x="10" y="-14" width="180" height="26" rx="5" fill="rgba(120, 53, 15, 0.98)" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#fef08a" text-anchor="middle">
       3. REGLAS, LEYES &amp; GOBIERNO
     </text>
-    <text x="100" y="68" font-family="sans-serif" font-size="7" font-weight="bold" fill="#fde68a" text-anchor="middle">
+    <text x="100" y="70" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="700" fill="#fde68a" text-anchor="middle">
       Leyes 1904/1844 • Meritocracia • Ética
     </text>
   </g>
@@ -174,26 +174,26 @@
     <circle cx="100" cy="38" r="16" fill="url(#purpleNode)"/>
     <text x="94" y="44" font-family="sans-serif" font-size="16">📋</text>
 
-    <rect x="15" y="-12" width="170" height="24" rx="4" fill="rgba(88, 28, 135, 0.95)" stroke="#c084fc" stroke-width="1"/>
-    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#faf5ff" text-anchor="middle">
+    <rect x="10" y="-14" width="180" height="26" rx="5" fill="rgba(88, 28, 135, 0.98)" stroke="#c084fc" stroke-width="1.2"/>
+    <text x="100" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#faf5ff" text-anchor="middle">
       4. PROCEDIMIENTOS &amp; CALIDAD
     </text>
-    <text x="100" y="68" font-family="sans-serif" font-size="7" font-weight="bold" fill="#e9d5ff" text-anchor="middle">
+    <text x="100" y="70" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="700" fill="#e9d5ff" text-anchor="middle">
       Selec. Inducción • ISO 9001 • Cero Papel
     </text>
   </g>
 
   <!-- NÚCLEO CENTRAL: UNCo CURZAS Y GESTIÓN DE RRHH (ANIMADO PULSANDO) -->
   <g class="anim-core">
-    <ellipse cx="60" cy="60" rx="50" ry="32" fill="#0f172a" stroke="#d4af37" stroke-width="2"/>
-    <ellipse cx="60" cy="60" rx="42" ry="24" fill="rgba(15, 45, 89, 0.9)"/>
-    <text x="60" y="58" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">
+    <ellipse cx="60" cy="60" rx="52" ry="34" fill="#0f172a" stroke="#d4af37" stroke-width="2"/>
+    <ellipse cx="60" cy="60" rx="44" ry="26" fill="rgba(15, 45, 89, 0.95)"/>
+    <text x="60" y="58" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">
       UNCo
     </text>
-    <text x="60" y="69" font-family="'Segoe UI', Roboto, sans-serif" font-size="7" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+    <text x="60" y="70" font-family="'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="900" fill="#f59e0b" text-anchor="middle">
       CURZAS
     </text>
-    <text x="60" y="78" font-family="'Segoe UI', Roboto, sans-serif" font-size="5.5" fill="#38bdf8" text-anchor="middle">
+    <text x="60" y="79" font-family="'Segoe UI', Roboto, sans-serif" font-size="7" font-weight="bold" fill="#38bdf8" text-anchor="middle">
       2026
     </text>
   </g>
@@ -201,29 +201,29 @@
   <!-- Tarjeta Pie de Resumen: Las 3 Prácticas Integradas -->
   <g transform="translate(30, 500)">
     <rect width="540" height="78" rx="6" fill="rgba(15, 23, 42, 0.95)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-    <text x="18" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#f59e0b">
+    <text x="18" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="900" fill="#f59e0b">
       SÍNTESIS DE LAS 3 PRÁCTICAS DESARROLLADAS PARA LA WIKI:
     </text>
     
     <g transform="translate(14, 28)">
-      <rect width="164" height="40" rx="3" fill="#1e293b" stroke="#34d399" stroke-width="0.8"/>
-      <text x="8" y="14" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#34d399">ACT. 6: SALUD PÚBLICA</text>
-      <text x="8" y="24" font-family="sans-serif" font-size="6" fill="#ffffff">Hospital Catriel (TGS)</text>
-      <text x="8" y="33" font-family="sans-serif" font-size="5.5" fill="#94a3b8">Leyes 1904/1844 &amp; Arraigo</text>
+      <rect width="164" height="42" rx="4" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
+      <text x="8" y="15" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#34d399">ACT. 6: SALUD PÚBLICA</text>
+      <text x="8" y="26" font-family="'Segoe UI', sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">Hospital Catriel (TGS)</text>
+      <text x="8" y="36" font-family="'Segoe UI', sans-serif" font-size="7" fill="#cbd5e1">Leyes 1904/1844 &amp; Arraigo</text>
     </g>
 
     <g transform="translate(188, 28)">
-      <rect width="164" height="40" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="0.8"/>
-      <text x="8" y="14" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#38bdf8">ACT. 8: REDISEÑO ECOMODA</text>
-      <text x="8" y="24" font-family="sans-serif" font-size="6" fill="#ffffff">Diagnóstico de 5 preguntas</text>
-      <text x="8" y="33" font-family="sans-serif" font-size="5.5" fill="#94a3b8">ERP Cloud, Intranet &amp; Cero Papel</text>
+      <rect width="164" height="42" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+      <text x="8" y="15" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#38bdf8">ACT. 8: REDISEÑO ECOMODA</text>
+      <text x="8" y="26" font-family="'Segoe UI', sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">Diagnóstico de 5 preguntas</text>
+      <text x="8" y="36" font-family="'Segoe UI', sans-serif" font-size="7" fill="#cbd5e1">ERP Cloud &amp; Cero Papel</text>
     </g>
 
     <g transform="translate(362, 28)">
-      <rect width="164" height="40" rx="3" fill="#1e293b" stroke="#f59e0b" stroke-width="0.8"/>
-      <text x="8" y="14" font-family="sans-serif" font-size="6.5" font-weight="bold" fill="#f59e0b">ACT. 9: PIRÁMIDE DE SI</text>
-      <text x="8" y="24" font-family="sans-serif" font-size="6" fill="#ffffff">Alineación TPS, MIS y DSS</text>
-      <text x="8" y="33" font-family="sans-serif" font-size="5.5" fill="#94a3b8">Inmutabilidad anti-Terramoda</text>
+      <rect width="164" height="42" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+      <text x="8" y="15" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="900" fill="#f59e0b">ACT. 9: PIRÁMIDE DE SI</text>
+      <text x="8" y="26" font-family="'Segoe UI', sans-serif" font-size="7.5" font-weight="bold" fill="#ffffff">Alineación TPS, MIS y DSS</text>
+      <text x="8" y="36" font-family="'Segoe UI', sans-serif" font-size="7" fill="#cbd5e1">Inmutabilidad anti-Terramoda</text>
     </g>
   </g>
 </svg>

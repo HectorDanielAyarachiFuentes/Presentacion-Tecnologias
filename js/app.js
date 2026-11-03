@@ -71,6 +71,21 @@ class PresentationApp {
     this.lightboxVideo = document.getElementById("lightbox-video");
     this.lightboxCaption = document.getElementById("lightbox-caption");
     this.btnCloseLightbox = document.getElementById("lightbox-close");
+    this.lightboxBody = document.getElementById("lightbox-body");
+    this.lightboxZoomToolbar = document.getElementById("lightbox-zoom-toolbar");
+    this.lightboxZoomLevel = document.getElementById("lightbox-zoom-level");
+    this.btnZoomIn = document.getElementById("btn-lightbox-zoom-in");
+    this.btnZoomOut = document.getElementById("btn-lightbox-zoom-out");
+    this.btnZoomReset = document.getElementById("btn-lightbox-zoom-reset");
+    this.lightboxHint = document.getElementById("lightbox-hint");
+
+    // Estado de Zoom y Pan en Lightbox
+    this.zoomLevel = 1;
+    this.panX = 0;
+    this.panY = 0;
+    this.isPanning = false;
+    this.panStartX = 0;
+    this.panStartY = 0;
 
     // Contador y Barra de Progreso
     this.slideCounter = document.getElementById("slide-counter");
@@ -221,6 +236,7 @@ class PresentationApp {
     if (this.mediaLightboxBackdrop) {
       this.mediaLightboxBackdrop.addEventListener("click", () => this.closeMediaLightbox());
     }
+    this.initLightboxZoom();
 
     // Gestos Táctiles (Swipe en Celulares y Tablets)
     let touchStartX = 0;
@@ -260,6 +276,56 @@ class PresentationApp {
         } else if (e.key.toLowerCase() === "m") {
           this.toggleDocMaximize();
           return;
+        }
+      }
+
+      // Si el modal de ampliación (Lightbox) está abierto, controles de zoom y pan
+      const isLightboxOpen = this.mediaLightboxModal && this.mediaLightboxModal.style.display !== "none";
+      if (isLightboxOpen) {
+        if (e.key === "Escape") {
+          this.closeMediaLightbox();
+          return;
+        }
+        if (e.key === "+" || e.key === "=") {
+          e.preventDefault();
+          this.zoomIn();
+          return;
+        }
+        if (e.key === "-" || e.key === "_") {
+          e.preventDefault();
+          this.zoomOut();
+          return;
+        }
+        if (e.key === "0") {
+          e.preventDefault();
+          this.resetMediaZoom();
+          return;
+        }
+        if (this.zoomLevel > 1) {
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            this.panX += 60;
+            this.applyMediaTransform(true);
+            return;
+          }
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            this.panX -= 60;
+            this.applyMediaTransform(true);
+            return;
+          }
+          if (e.key === "ArrowUp") {
+            e.preventDefault();
+            this.panY += 60;
+            this.applyMediaTransform(true);
+            return;
+          }
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            this.panY -= 60;
+            this.applyMediaTransform(true);
+            return;
+          }
         }
       }
 
@@ -413,9 +479,9 @@ class PresentationApp {
             </div>
             <p class="caratula-carrera">Licenciatura en Recursos Humanos | Tecnologías de la Información para la Gestión 2026</p>
             <div class="caratula-practicas-pills">
-              <span class="practica-pill"><strong>Act. 6:</strong> Mapeo Sistémico Hospital Catriel (TGS)</span>
-              <span class="practica-pill"><strong>Act. 8:</strong> Diagnóstico y Rediseño Ecomoda S.A.</span>
-              <span class="practica-pill"><strong>Act. 9:</strong> Pirámide Organizacional y Tipos de SI</span>
+              <span class="practica-pill"><strong>Act. 6:</strong> Mapeo Sistémico Organizacional</span>
+              <span class="practica-pill"><strong>Act. 8:</strong> Ficha de Diagnóstico y Rediseño de Información Organizacional</span>
+              <span class="practica-pill"><strong>Act. 9:</strong> Pirámide Organizacional y Tipos de Sistemas</span>
             </div>
           </div>
 
@@ -427,15 +493,15 @@ class PresentationApp {
             <div class="caratula-wiki-list">
               <div class="caratula-wiki-item">
                 <span>📌</span>
-                <span><strong>Actividad 6:</strong> Aplicación de la TGS al ingreso de personal de salud bajo Leyes 1904/1844 en Catriel.</span>
+                <span><strong>Actividad 6: Mapeo Sistémico Organizacional:</strong> Aplicación de la TGS al ingreso de personal de salud bajo Leyes 1904/1844 en Catriel.</span>
               </div>
               <div class="caratula-wiki-item">
                 <span>📌</span>
-                <span><strong>Actividad 8:</strong> Ficha de diagnóstico de flujos, canales de comunicación y rediseño ERP Cloud en Ecomoda.</span>
+                <span><strong>Actividad 8: Ficha de Diagnóstico y Rediseño de Información Organizacional:</strong> Diagnóstico de las 5 preguntas y rediseño integral en Ecomoda S.A.</span>
               </div>
               <div class="caratula-wiki-item">
                 <span>📌</span>
-                <span><strong>Actividad 9:</strong> Mapeo de la pirámide organizacional y alineación de sistemas TPS, MIS y DSS anti-fraude.</span>
+                <span><strong>Actividad 9: Pirámide Organizacional y Tipos de Sistemas:</strong> Alineación jerárquica de sistemas (TPS, MIS, DSS) y principio GIGO en Ecomoda S.A.</span>
               </div>
             </div>
           </div>
@@ -669,7 +735,7 @@ class PresentationApp {
 
     const url = (gifData.url || "").trim();
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm") || url.toLowerCase().endsWith(".mov");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.4` : `${url}?v=5.4`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.5` : `${url}?v=5.5`) : url;
 
     if (url !== "") {
       if (isVideo) {
@@ -789,9 +855,13 @@ class PresentationApp {
     }
 
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.4` : `${url}?v=5.4`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.5` : `${url}?v=5.5`) : url;
 
     if (isVideo) {
+      if (this.lightboxZoomToolbar) this.lightboxZoomToolbar.style.display = "none";
+      if (this.lightboxHint) {
+        this.lightboxHint.innerHTML = "💡 Use los controles de reproducción • Presione <kbd>Esc</kbd> para salir";
+      }
       if (this.lightboxImg) {
         this.lightboxImg.style.display = "none";
         this.lightboxImg.src = "";
@@ -805,6 +875,11 @@ class PresentationApp {
         }
       }
     } else {
+      if (this.lightboxZoomToolbar) this.lightboxZoomToolbar.style.display = "flex";
+      if (this.lightboxHint) {
+        this.lightboxHint.innerHTML = "🔍 Rueda del mouse o <kbd>+</kbd>/<kbd>-</kbd> para <strong>Zoom</strong> • Arrastre para <strong>Mover</strong> • Doble clic para <strong>Acercar</strong> • <kbd>Esc</kbd> para salir";
+      }
+      this.resetMediaZoom();
       if (this.lightboxVideo) {
         if (typeof this.lightboxVideo.pause === "function") {
           this.lightboxVideo.pause();
@@ -826,12 +901,182 @@ class PresentationApp {
     if (!this.mediaLightboxModal) return;
     this.mediaLightboxModal.style.display = "none";
     this.mediaLightboxModal.setAttribute("aria-hidden", "true");
+    this.resetMediaZoom();
     if (this.lightboxVideo && typeof this.lightboxVideo.pause === "function") {
       this.lightboxVideo.pause();
       this.lightboxVideo.src = "";
     }
     if (this.lightboxImg) {
       this.lightboxImg.src = "";
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SISTEMA INTERACTIVO DE ZOOM & PAN PARA ESQUEMAS ISOMÉTRICOS EN LIGHTBOX
+  // ═══════════════════════════════════════════════════════════════════════════
+  initLightboxZoom() {
+    if (this.btnZoomIn) {
+      this.btnZoomIn.addEventListener("click", () => this.zoomIn());
+    }
+    if (this.btnZoomOut) {
+      this.btnZoomOut.addEventListener("click", () => this.zoomOut());
+    }
+    if (this.btnZoomReset) {
+      this.btnZoomReset.addEventListener("click", () => this.resetMediaZoom());
+    }
+    if (this.lightboxZoomLevel) {
+      this.lightboxZoomLevel.addEventListener("click", () => this.resetMediaZoom());
+    }
+
+    if (this.lightboxBody) {
+      // Zoom progresivo con la rueda del mouse
+      this.lightboxBody.addEventListener("wheel", (e) => {
+        if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 0.35 : -0.35;
+        this.setZoom(this.zoomLevel + factor);
+      }, { passive: false });
+
+      // Doble clic para alternar entre 100% y 250%
+      this.lightboxBody.addEventListener("dblclick", (e) => {
+        if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (this.zoomLevel > 1) {
+          this.resetMediaZoom();
+        } else {
+          this.setZoom(2.5);
+        }
+      });
+
+      // Arrastre con clic sostenido (Pan) cuando zoom > 1x
+      this.lightboxBody.addEventListener("mousedown", (e) => {
+        if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (this.zoomLevel > 1 && e.button === 0) {
+          this.isPanning = true;
+          this.panStartX = e.clientX - this.panX;
+          this.panStartY = e.clientY - this.panY;
+          this.lightboxBody.classList.add("is-dragging");
+          this.applyMediaTransform(false);
+        }
+      });
+
+      // Soporte para gestos táctiles (Móviles / Tablets)
+      let initialTouchDist = 0;
+      let initialZoom = 1;
+
+      this.lightboxBody.addEventListener("touchstart", (e) => {
+        if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (e.touches.length === 1 && this.zoomLevel > 1) {
+          this.isPanning = true;
+          this.panStartX = e.touches[0].clientX - this.panX;
+          this.panStartY = e.touches[0].clientY - this.panY;
+        } else if (e.touches.length === 2) {
+          this.isPanning = false;
+          initialTouchDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          initialZoom = this.zoomLevel;
+        }
+      }, { passive: true });
+
+      this.lightboxBody.addEventListener("touchmove", (e) => {
+        if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (e.touches.length === 1 && this.isPanning) {
+          this.panX = e.touches[0].clientX - this.panStartX;
+          this.panY = e.touches[0].clientY - this.panStartY;
+          this.applyMediaTransform(false);
+        } else if (e.touches.length === 2 && initialTouchDist > 0) {
+          const currentDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          const pinchScale = currentDist / initialTouchDist;
+          this.setZoom(initialZoom * pinchScale);
+        }
+      }, { passive: true });
+
+      this.lightboxBody.addEventListener("touchend", () => {
+        this.isPanning = false;
+        initialTouchDist = 0;
+        this.applyMediaTransform(true);
+      });
+    }
+
+    window.addEventListener("mousemove", (e) => {
+      if (this.isPanning) {
+        this.panX = e.clientX - this.panStartX;
+        this.panY = e.clientY - this.panStartY;
+        this.applyMediaTransform(false);
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      if (this.isPanning) {
+        this.isPanning = false;
+        if (this.lightboxBody) this.lightboxBody.classList.remove("is-dragging");
+        this.applyMediaTransform(true);
+      }
+    });
+  }
+
+  setZoom(level) {
+    const clamped = Math.max(1, Math.min(5, Math.round(level * 100) / 100));
+    this.zoomLevel = clamped;
+    if (this.zoomLevel <= 1) {
+      this.zoomLevel = 1;
+      this.panX = 0;
+      this.panY = 0;
+    }
+    this.applyMediaTransform(true);
+    this.updateZoomControlsUI();
+  }
+
+  zoomIn(step = 0.35) {
+    this.setZoom(this.zoomLevel + step);
+  }
+
+  zoomOut(step = 0.35) {
+    this.setZoom(this.zoomLevel - step);
+  }
+
+  resetMediaZoom() {
+    this.zoomLevel = 1;
+    this.panX = 0;
+    this.panY = 0;
+    this.isPanning = false;
+    if (this.lightboxBody) {
+      this.lightboxBody.classList.remove("is-zoomed", "is-dragging");
+    }
+    this.applyMediaTransform(true);
+    this.updateZoomControlsUI();
+  }
+
+  applyMediaTransform(smooth = true) {
+    if (!this.lightboxImg) return;
+    if (!smooth) {
+      this.lightboxImg.style.transition = "none";
+    } else {
+      this.lightboxImg.style.transition = "transform 0.18s cubic-bezier(0.2, 0, 0, 1)";
+    }
+    this.lightboxImg.style.transform = `translate(${this.panX}px, ${this.panY}px) scale(${this.zoomLevel})`;
+    if (this.lightboxBody) {
+      if (this.zoomLevel > 1) {
+        this.lightboxBody.classList.add("is-zoomed");
+      } else {
+        this.lightboxBody.classList.remove("is-zoomed");
+      }
+    }
+  }
+
+  updateZoomControlsUI() {
+    if (this.lightboxZoomLevel) {
+      this.lightboxZoomLevel.textContent = `${Math.round(this.zoomLevel * 100)}%`;
+    }
+    if (this.btnZoomOut) {
+      this.btnZoomOut.disabled = this.zoomLevel <= 1;
+    }
+    if (this.btnZoomIn) {
+      this.btnZoomIn.disabled = this.zoomLevel >= 5;
     }
   }
 
