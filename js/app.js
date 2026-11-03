@@ -741,7 +741,7 @@ class PresentationApp {
 
     const url = (gifData.url || "").trim();
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm") || url.toLowerCase().endsWith(".mov");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.6` : `${url}?v=5.6`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.7` : `${url}?v=5.7`) : url;
 
     if (url !== "") {
       if (isVideo) {
@@ -861,7 +861,7 @@ class PresentationApp {
     }
 
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.6` : `${url}?v=5.6`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.7` : `${url}?v=5.7`) : url;
 
     if (isVideo) {
       if (this.floatingDock) this.floatingDock.style.display = "none";
