@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5.5">
+  <link rel="stylesheet" href="css/styles.css?v=5.6">
   <link rel="icon" type="image/png" href="assets/CURZAS.png">
 </head>
 <body>
@@ -345,36 +345,65 @@
           <h3 class="media-lightbox-title" id="lightbox-title">Demostración en Detalle</h3>
         </div>
         <div class="media-lightbox-header-right">
-          <div class="lightbox-zoom-toolbar" id="lightbox-zoom-toolbar" title="Controles de Zoom">
-            <button class="btn-lightbox-zoom" id="btn-lightbox-zoom-out" title="Alejar (- / Rueda hacia abajo)" aria-label="Alejar">
-              <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/><line x1="5.5" y1="8.5" x2="11.5" y2="8.5"/></svg>
-            </button>
-            <span class="lightbox-zoom-level" id="lightbox-zoom-level" title="Nivel de Zoom (Clic para restablecer)">100%</span>
-            <button class="btn-lightbox-zoom" id="btn-lightbox-zoom-in" title="Acercar (+ / Rueda hacia arriba)" aria-label="Acercar">
-              <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/><line x1="5.5" y1="8.5" x2="11.5" y2="8.5"/><line x1="8.5" y1="5.5" x2="8.5" y2="11.5"/></svg>
-            </button>
-            <button class="btn-lightbox-zoom" id="btn-lightbox-zoom-reset" title="Restablecer vista 100% (Tecla 0)" aria-label="Restablecer Zoom">
-              <svg viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 10a7 7 0 1 0 2-4.9L3 7"/><path d="M3 3v4h4"/></svg>
-            </button>
-          </div>
           <button class="media-lightbox-close" id="lightbox-close" title="Cerrar ampliación (Esc)" aria-label="Cerrar ampliación">✕</button>
         </div>
       </div>
+      
       <div class="media-lightbox-body" id="lightbox-body">
         <img id="lightbox-img" class="lightbox-media-img" src="" alt="Esquema ampliado" style="display: none;">
         <video id="lightbox-video" class="lightbox-media-video" autoplay loop muted playsinline controls style="display: none;"></video>
+
+        <!-- Dock Flotante de Zoom y Navegación Glassmorphism (UX/UI Premium) -->
+        <div class="lightbox-floating-dock" id="lightbox-floating-dock" role="toolbar" aria-label="Controles de Zoom">
+          <button class="dock-btn" id="btn-dock-zoom-out" title="Alejar (- / Rueda hacia abajo)" aria-label="Alejar">
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          
+          <button class="dock-zoom-pill" id="dock-zoom-badge" title="Nivel de Zoom (Clic para alternar 100% / 200%)" aria-label="Nivel de zoom">
+            <span id="dock-zoom-text">100%</span>
+          </button>
+          
+          <button class="dock-btn" id="btn-dock-zoom-in" title="Acercar (+ / Rueda hacia arriba)" aria-label="Acercar">
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+
+          <span class="dock-divider" aria-hidden="true"></span>
+
+          <button class="dock-btn dock-btn-text" id="btn-dock-preset-2x" title="Vista rápida de detalle al 200%">
+            <span>200%</span>
+          </button>
+
+          <button class="dock-btn dock-btn-text" id="btn-dock-reset" title="Restablecer vista centrada 100% (Tecla 0)">
+            <svg viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 10a7 7 0 1 0 2-4.9L3 7"/><path d="M3 3v4h4"/></svg>
+            <span>Centrar</span>
+          </button>
+
+          <span class="dock-divider" aria-hidden="true"></span>
+
+          <div class="dock-hint-item" title="Rueda del mouse: Zoom • Arrastre: Mover diagrama • Doble clic: 200% • Esc: Cerrar">
+            <span class="dock-hint-icon">💡</span>
+            <span class="dock-hint-label" id="dock-hint-text">Doble clic para 200%</span>
+          </div>
+        </div>
       </div>
+
       <div class="media-lightbox-footer">
-        <p class="media-lightbox-caption" id="lightbox-caption">Figura: Demostración ampliada de la práctica.</p>
-        <span class="media-lightbox-hint" id="lightbox-hint">🔍 Rueda del mouse o <kbd>+</kbd>/<kbd>-</kbd> para <strong>Zoom</strong> • Arrastre para <strong>Mover</strong> • Doble clic para <strong>Acercar</strong> • <kbd>Esc</kbd> para salir</span>
+        <div class="lightbox-footer-caption-group">
+          <span class="lightbox-footer-icon" aria-hidden="true">📌</span>
+          <p class="media-lightbox-caption" id="lightbox-caption">Figura: Demostración ampliada de la práctica.</p>
+        </div>
+        <div class="lightbox-footer-hint-badge">
+          <kbd>Esc</kbd>
+          <span>para salir</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Módulos de Datos y Lógica de la Aplicación -->
-  <script src="data/catedra_data.js?v=5.5"></script>
-  <script src="data/presentacion_data.js?v=5.5"></script>
-  <script src="js/app.js?v=5.5"></script>
+  <script src="data/catedra_data.js?v=5.6"></script>
+  <script src="data/presentacion_data.js?v=5.6"></script>
+  <script src="js/app.js?v=5.6"></script>
 
 </body>
 </html>

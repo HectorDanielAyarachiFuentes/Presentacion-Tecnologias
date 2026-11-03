@@ -72,12 +72,14 @@ class PresentationApp {
     this.lightboxCaption = document.getElementById("lightbox-caption");
     this.btnCloseLightbox = document.getElementById("lightbox-close");
     this.lightboxBody = document.getElementById("lightbox-body");
-    this.lightboxZoomToolbar = document.getElementById("lightbox-zoom-toolbar");
-    this.lightboxZoomLevel = document.getElementById("lightbox-zoom-level");
-    this.btnZoomIn = document.getElementById("btn-lightbox-zoom-in");
-    this.btnZoomOut = document.getElementById("btn-lightbox-zoom-out");
-    this.btnZoomReset = document.getElementById("btn-lightbox-zoom-reset");
-    this.lightboxHint = document.getElementById("lightbox-hint");
+    this.floatingDock = document.getElementById("lightbox-floating-dock");
+    this.btnDockZoomIn = document.getElementById("btn-dock-zoom-in");
+    this.btnDockZoomOut = document.getElementById("btn-dock-zoom-out");
+    this.btnDockReset = document.getElementById("btn-dock-reset");
+    this.btnDockPreset2x = document.getElementById("btn-dock-preset-2x");
+    this.dockZoomBadge = document.getElementById("dock-zoom-badge");
+    this.dockZoomText = document.getElementById("dock-zoom-text");
+    this.dockHintText = document.getElementById("dock-hint-text");
 
     // Estado de Zoom y Pan en Lightbox
     this.zoomLevel = 1;
@@ -305,24 +307,28 @@ class PresentationApp {
           if (e.key === "ArrowLeft") {
             e.preventDefault();
             this.panX += 60;
+            this.clampPan();
             this.applyMediaTransform(true);
             return;
           }
           if (e.key === "ArrowRight") {
             e.preventDefault();
             this.panX -= 60;
+            this.clampPan();
             this.applyMediaTransform(true);
             return;
           }
           if (e.key === "ArrowUp") {
             e.preventDefault();
             this.panY += 60;
+            this.clampPan();
             this.applyMediaTransform(true);
             return;
           }
           if (e.key === "ArrowDown") {
             e.preventDefault();
             this.panY -= 60;
+            this.clampPan();
             this.applyMediaTransform(true);
             return;
           }
@@ -735,7 +741,7 @@ class PresentationApp {
 
     const url = (gifData.url || "").trim();
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm") || url.toLowerCase().endsWith(".mov");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.5` : `${url}?v=5.5`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.6` : `${url}?v=5.6`) : url;
 
     if (url !== "") {
       if (isVideo) {
@@ -855,13 +861,10 @@ class PresentationApp {
     }
 
     const isVideo = url.toLowerCase().endsWith(".mp4") || url.toLowerCase().endsWith(".webm");
-    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.5` : `${url}?v=5.5`) : url;
+    const mediaUrl = (!isVideo && url !== "") ? (url.includes("?") ? `${url}&v=5.6` : `${url}?v=5.6`) : url;
 
     if (isVideo) {
-      if (this.lightboxZoomToolbar) this.lightboxZoomToolbar.style.display = "none";
-      if (this.lightboxHint) {
-        this.lightboxHint.innerHTML = "💡 Use los controles de reproducción • Presione <kbd>Esc</kbd> para salir";
-      }
+      if (this.floatingDock) this.floatingDock.style.display = "none";
       if (this.lightboxImg) {
         this.lightboxImg.style.display = "none";
         this.lightboxImg.src = "";
@@ -875,10 +878,7 @@ class PresentationApp {
         }
       }
     } else {
-      if (this.lightboxZoomToolbar) this.lightboxZoomToolbar.style.display = "flex";
-      if (this.lightboxHint) {
-        this.lightboxHint.innerHTML = "🔍 Rueda del mouse o <kbd>+</kbd>/<kbd>-</kbd> para <strong>Zoom</strong> • Arrastre para <strong>Mover</strong> • Doble clic para <strong>Acercar</strong> • <kbd>Esc</kbd> para salir";
-      }
+      if (this.floatingDock) this.floatingDock.style.display = "flex";
       this.resetMediaZoom();
       if (this.lightboxVideo) {
         if (typeof this.lightboxVideo.pause === "function") {
@@ -912,59 +912,92 @@ class PresentationApp {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // SISTEMA INTERACTIVO DE ZOOM & PAN PARA ESQUEMAS ISOMÉTRICOS EN LIGHTBOX
+  // SISTEMA INTERACTIVO DE ZOOM & PAN CON LÍMITES INTELIGENTES (UX/UI PROFESIONAL)
   // ═══════════════════════════════════════════════════════════════════════════
   initLightboxZoom() {
-    if (this.btnZoomIn) {
-      this.btnZoomIn.addEventListener("click", () => this.zoomIn());
+    // 1. Controles del Dock Flotante
+    if (this.btnDockZoomIn) {
+      this.btnDockZoomIn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.zoomIn();
+      });
     }
-    if (this.btnZoomOut) {
-      this.btnZoomOut.addEventListener("click", () => this.zoomOut());
+    if (this.btnDockZoomOut) {
+      this.btnDockZoomOut.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.zoomOut();
+      });
     }
-    if (this.btnZoomReset) {
-      this.btnZoomReset.addEventListener("click", () => this.resetMediaZoom());
+    if (this.btnDockReset) {
+      this.btnDockReset.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.resetMediaZoom();
+      });
     }
-    if (this.lightboxZoomLevel) {
-      this.lightboxZoomLevel.addEventListener("click", () => this.resetMediaZoom());
+    if (this.btnDockPreset2x) {
+      this.btnDockPreset2x.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.setZoom(Math.abs(this.zoomLevel - 2) < 0.2 ? 1 : 2);
+      });
+    }
+    if (this.dockZoomBadge) {
+      this.dockZoomBadge.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.setZoom(this.zoomLevel <= 1 ? 2 : 1);
+      });
+    }
+
+    // Evitar que el clic o arrastre sobre el dock interactúe con el fondo o la imagen
+    if (this.floatingDock) {
+      this.floatingDock.addEventListener("mousedown", (e) => e.stopPropagation());
+      this.floatingDock.addEventListener("touchstart", (e) => e.stopPropagation(), { passive: true });
+      this.floatingDock.addEventListener("wheel", (e) => e.stopPropagation(), { passive: true });
+      this.floatingDock.addEventListener("dblclick", (e) => e.stopPropagation());
     }
 
     if (this.lightboxBody) {
-      // Zoom progresivo con la rueda del mouse
+      // 2. Zoom Progresivo con la Rueda del Mouse (Suave y con Clamping)
       this.lightboxBody.addEventListener("wheel", (e) => {
         if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (e.target && e.target.closest && e.target.closest("#lightbox-floating-dock")) return;
         e.preventDefault();
-        const factor = e.deltaY < 0 ? 0.35 : -0.35;
+        const factor = e.deltaY < 0 ? 0.3 : -0.3;
         this.setZoom(this.zoomLevel + factor);
       }, { passive: false });
 
-      // Doble clic para alternar entre 100% y 250%
+      // 3. Doble Clic para alternar rápidamente entre 100% (Ajustar) y 200% (Detalle)
       this.lightboxBody.addEventListener("dblclick", (e) => {
         if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (e.target && e.target.closest && e.target.closest("#lightbox-floating-dock")) return;
         if (this.zoomLevel > 1) {
           this.resetMediaZoom();
         } else {
-          this.setZoom(2.5);
+          this.setZoom(2);
         }
       });
 
-      // Arrastre con clic sostenido (Pan) cuando zoom > 1x
+      // 4. Arrastre con Clic Sostenido (Pan) con LÍMITES ESTRICTOS (No se puede salir ni romper)
       this.lightboxBody.addEventListener("mousedown", (e) => {
         if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (e.target && e.target.closest && e.target.closest("#lightbox-floating-dock")) return;
         if (this.zoomLevel > 1 && e.button === 0) {
           this.isPanning = true;
           this.panStartX = e.clientX - this.panX;
           this.panStartY = e.clientY - this.panY;
           this.lightboxBody.classList.add("is-dragging");
           this.applyMediaTransform(false);
+          e.preventDefault();
         }
       });
 
-      // Soporte para gestos táctiles (Móviles / Tablets)
+      // 5. Soporte Táctil Completo (Pinch to Zoom y Pan en Móviles / Tablets)
       let initialTouchDist = 0;
       let initialZoom = 1;
 
       this.lightboxBody.addEventListener("touchstart", (e) => {
         if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
+        if (e.target && e.target.closest && e.target.closest("#lightbox-floating-dock")) return;
+
         if (e.touches.length === 1 && this.zoomLevel > 1) {
           this.isPanning = true;
           this.panStartX = e.touches[0].clientX - this.panX;
@@ -981,9 +1014,12 @@ class PresentationApp {
 
       this.lightboxBody.addEventListener("touchmove", (e) => {
         if (!this.lightboxImg || this.lightboxImg.style.display === "none") return;
-        if (e.touches.length === 1 && this.isPanning) {
+        if (e.target && e.target.closest && e.target.closest("#lightbox-floating-dock")) return;
+
+        if (e.touches.length === 1 && this.isPanning && this.zoomLevel > 1) {
           this.panX = e.touches[0].clientX - this.panStartX;
           this.panY = e.touches[0].clientY - this.panStartY;
+          this.clampPan();
           this.applyMediaTransform(false);
         } else if (e.touches.length === 2 && initialTouchDist > 0) {
           const currentDist = Math.hypot(
@@ -996,16 +1032,21 @@ class PresentationApp {
       }, { passive: true });
 
       this.lightboxBody.addEventListener("touchend", () => {
-        this.isPanning = false;
+        if (this.isPanning) {
+          this.isPanning = false;
+          this.clampPan();
+          this.applyMediaTransform(true);
+        }
         initialTouchDist = 0;
-        this.applyMediaTransform(true);
       });
     }
 
+    // 6. Seguimiento de Mouse Global durante el Arrastre
     window.addEventListener("mousemove", (e) => {
-      if (this.isPanning) {
+      if (this.isPanning && this.zoomLevel > 1) {
         this.panX = e.clientX - this.panStartX;
         this.panY = e.clientY - this.panStartY;
+        this.clampPan();
         this.applyMediaTransform(false);
       }
     });
@@ -1014,28 +1055,63 @@ class PresentationApp {
       if (this.isPanning) {
         this.isPanning = false;
         if (this.lightboxBody) this.lightboxBody.classList.remove("is-dragging");
+        this.clampPan();
+        this.applyMediaTransform(true);
+      }
+    });
+
+    // 7. Recalcular límites si cambia el tamaño de la ventana
+    window.addEventListener("resize", () => {
+      if (this.mediaLightboxModal && this.mediaLightboxModal.style.display !== "none") {
+        this.clampPan();
         this.applyMediaTransform(true);
       }
     });
   }
 
-  setZoom(level) {
-    const clamped = Math.max(1, Math.min(5, Math.round(level * 100) / 100));
-    this.zoomLevel = clamped;
+  // Clamping riguroso: impide que el diagrama salga del marco o se rompa
+  clampPan() {
     if (this.zoomLevel <= 1) {
-      this.zoomLevel = 1;
       this.panX = 0;
       this.panY = 0;
+      return;
     }
+    if (!this.lightboxBody || !this.lightboxImg) return;
+
+    const boxW = this.lightboxBody.clientWidth || 800;
+    const boxH = this.lightboxBody.clientHeight || 600;
+
+    const baseW = (this.lightboxImg.offsetWidth && this.lightboxImg.offsetWidth > 0)
+      ? this.lightboxImg.offsetWidth
+      : Math.min(boxW * 0.85, boxH * 0.85);
+    const baseH = (this.lightboxImg.offsetHeight && this.lightboxImg.offsetHeight > 0)
+      ? this.lightboxImg.offsetHeight
+      : baseW;
+
+    const scaledW = baseW * this.zoomLevel;
+    const scaledH = baseH * this.zoomLevel;
+
+    // Margen de seguridad para que los extremos del SVG se puedan leer con holgura pero NUNCA se pierdan
+    const maxPanX = Math.max(0, (scaledW - boxW) / 2) + 60;
+    const maxPanY = Math.max(0, (scaledH - boxH) / 2) + 60;
+
+    this.panX = Math.max(-maxPanX, Math.min(maxPanX, this.panX));
+    this.panY = Math.max(-maxPanY, Math.min(maxPanY, this.panY));
+  }
+
+  setZoom(level) {
+    const clamped = Math.max(1, Math.min(4.5, Math.round(level * 10) / 10));
+    this.zoomLevel = clamped;
+    this.clampPan();
     this.applyMediaTransform(true);
     this.updateZoomControlsUI();
   }
 
-  zoomIn(step = 0.35) {
+  zoomIn(step = 0.4) {
     this.setZoom(this.zoomLevel + step);
   }
 
-  zoomOut(step = 0.35) {
+  zoomOut(step = 0.4) {
     this.setZoom(this.zoomLevel - step);
   }
 
@@ -1053,30 +1129,36 @@ class PresentationApp {
 
   applyMediaTransform(smooth = true) {
     if (!this.lightboxImg) return;
-    if (!smooth) {
-      this.lightboxImg.style.transition = "none";
-    } else {
-      this.lightboxImg.style.transition = "transform 0.18s cubic-bezier(0.2, 0, 0, 1)";
-    }
-    this.lightboxImg.style.transform = `translate(${this.panX}px, ${this.panY}px) scale(${this.zoomLevel})`;
+    this.lightboxImg.style.transition = smooth
+      ? "transform 0.22s cubic-bezier(0.2, 0, 0, 1)"
+      : "none";
+    this.lightboxImg.style.transform = `translate(${Math.round(this.panX)}px, ${Math.round(this.panY)}px) scale(${this.zoomLevel})`;
+
     if (this.lightboxBody) {
       if (this.zoomLevel > 1) {
         this.lightboxBody.classList.add("is-zoomed");
       } else {
-        this.lightboxBody.classList.remove("is-zoomed");
+        this.lightboxBody.classList.remove("is-zoomed", "is-dragging");
       }
     }
   }
 
   updateZoomControlsUI() {
-    if (this.lightboxZoomLevel) {
-      this.lightboxZoomLevel.textContent = `${Math.round(this.zoomLevel * 100)}%`;
+    const percentText = `${Math.round(this.zoomLevel * 100)}%`;
+    if (this.dockZoomText) {
+      this.dockZoomText.textContent = percentText;
     }
-    if (this.btnZoomOut) {
-      this.btnZoomOut.disabled = this.zoomLevel <= 1;
+    if (this.btnDockZoomOut) {
+      this.btnDockZoomOut.disabled = this.zoomLevel <= 1;
     }
-    if (this.btnZoomIn) {
-      this.btnZoomIn.disabled = this.zoomLevel >= 5;
+    if (this.btnDockZoomIn) {
+      this.btnDockZoomIn.disabled = this.zoomLevel >= 4.5;
+    }
+    if (this.btnDockPreset2x) {
+      this.btnDockPreset2x.classList.toggle("is-active", Math.abs(this.zoomLevel - 2) < 0.15);
+    }
+    if (this.dockHintText) {
+      this.dockHintText.textContent = this.zoomLevel > 1 ? "Arrastre para explorar" : "Doble clic para 200%";
     }
   }
 
